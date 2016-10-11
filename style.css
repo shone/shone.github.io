@@ -1,16 +1,24 @@
 body {
   font-family: 'Slabo 27px', serif;
   font-size: 1.5vw;
-  color: #666;
+  color: #fff;
+  text-shadow: 2px 2px 7px #000000;
+  background-image: url(background.png);
 }
 
 h1, h2 {
   text-align: center;
 }
 
+.jumpy-cake {
+  width: 5vw;
+  height: 5vw;
+}
+
 .image-stack {
   position: relative;
   width: 70%;
+  height: 41vw;
 }
 
 .image-stack img {
@@ -63,9 +71,11 @@ h1, h2 {
 }
 
 .label {
-  position: absolute;
-  left: 50%;
-  top: 40vw;
   font-size: 40px;
-  margin-left: -190px;
+  text-align: center;
+}
+
+ul {
+  margin: 0 13vw;
+  font-size: 1.8vw;
 }
