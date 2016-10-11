@@ -4,6 +4,7 @@ body {
   color: #fff;
   text-shadow: 2px 2px 7px #000000;
   background-image: url(background.png);
+  padding-bottom: 2vw;
 }
 
 h1, h2 {
