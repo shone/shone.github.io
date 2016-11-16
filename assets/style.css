@@ -27,18 +27,25 @@ ul {
   list-style-type: none;
 }
 
+.profile {
+  margin: 0 auto;
+  width: 25rem;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .profile {
+    position: fixed;
+    left: 5vw;
+    right: 55vw;
+    width: auto;
+  }
+}
+
 .profile-card {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-
-@media (min-width: 1350px) {
-  .profile-card {
-    position: fixed;
-    left: 50%;
-    margin-left: -25.5rem;
-  }
 }
 
 .profile-picture {
@@ -72,15 +79,6 @@ ul {
   margin-top:    0.5rem;
   margin-bottom: 2rem;
   justify-content: space-between;
-}
-@media (min-width: 1350px) {
-  .profile-links {
-    position: fixed;
-    left: 50%;
-    margin-left: -26rem;
-    margin-top: 11.5rem;
-    width:      11.5rem;
-  }
 }
 
 .profile-link {
@@ -117,6 +115,10 @@ ul {
 .skype-link {
   background-image: url(skype-logo.svg);
 }
+.cv-link {
+  background-image: url(cv-icon.svg);
+  background-size: 4rem;
+}
 
 .main-content {
   margin: 0 auto;
@@ -124,56 +126,29 @@ ul {
   max-width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .main-content {
+    margin-left: 50vw;
+    margin-right: 5vw;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
 h2 {
   margin-top: 2rem;
   font-size:   inherit;
   font-weight: inherit;
+  background-color: #54545d;
+  color: #fff;
+  padding: 9px;
+  border-left: 5px solid orange;
 }
 
-/*.location {
-  float: right;
-  text-align: right;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin: 0.5rem;
-}
-.map-pin {
-  background-image: url(map-pin.svg);
-  width:  2.2rem;
-  height: 2.2rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.location .map-pin {
-  margin: 0 auto;
-  margin-bottom: 0.35rem;
-}*/
-
-.cv-link {
-  float: right;
-  display: inline;
-  text-align: center;
-  padding: 0.4rem;
-}
-.cv-link:hover,
-.cv-link:focus {
-  background-color: #D8E3EA;
-  outline: none;
-}
-.cv-link:active {
-  background-color: #FFCF77;
-}
-.cv-link img {
-  display: block;
-  width:  2.5rem;
-  height: 2.5rem;
-  pointer-events: none;
-}
-.cv-link label {
-  display: block;
-  font-weight: bold;
-  color: initial;
-  pointer-events: none;
+@media (min-width: 1024px) {
+  h2 {
+    margin-left: -31px;
+  }
 }
 
 .boxed {
