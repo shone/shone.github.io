@@ -1,189 +1,334 @@
-<!doctype html>
 <html>
-
   <head>
-    <meta charset="utf-8">
-    
-    <title>Joshua Shone</title>
-    
-    <meta name="description" content="Personal website and CV/resumê for Joshua Shone.">
-    
-    <link rel="icon" href="assets/favicon.png">
-    
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="assets/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Volkhov" rel="stylesheet">
   </head>
-  
   <body>
-  
-    <section class="profile">
-  
-      <div class="profile-card">
-        <img class="profile-picture" alt="Profile picture" src="assets/profile-picture2.jpg">
-        <a class="email" href="mailto:josh.shone@gmail.com">josh.shone@gmail.com</a>
-      </div>
-      
-      <div class="profile-links">
-        <a class="profile-link github-link"        title="GitHub"        href="https://github.com/joshua-shone"></a>
-        <a class="profile-link linkedin-link"      title="LinkedIn"      href="https://www.linkedin.com/in/josh-shone"></a>
-        <a class="profile-link skype-link"         title="Skype"         href="skype:josh.shone?call"></a>
-        <a class="profile-link cv-link"            title="Curriculum vitae/Resumê" href="cv/cv.pdf"></a>
-      </div>
-    
-      <div>
+    <header>
+      <div id="title-image"></div>
+      <h1>Josh Shone<h2>
+    </header>
+    <div id="timeline-header"></div>
+    <div id="vertical-separator"></div>
+    <main>
+      <a class="section-header" href="#about">
+        <h2>About</h2>
+        <span class="timeline-row">
+          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015"><div>Australia</div></span>
+          <span class="timeline-block germany" data-start="24.08.2015" data-end="now"><div>Germany</div></span>
+        </span>
+      </a>
+      <span class="timeline-row">
+        <span class="timeline-block" data-start="26.09.1989" data-end="01.06.2015"><div>Parkour</div></span>
+        <span class="timeline-block" data-start="24.08.2015" data-end="now"><div>Karaoke</div></span>
+      </span>
+      <section id="about">
+        <div class="key-value-info">
+          <div class="key-value-item profession">
+            <div class="key">profession:</div>
+            <div class="value">Software Developer</div>
+          </div>
+          <div class="key-value-item location">
+            <div class="key">currently in:</div>
+            <div class="value">Berlin</div>
+          </div>
+          <div class="key-value-item date-of-birth">
+            <div class="key">born:</div>
+            <div class="value">1989 (29)</div>
+          </div>
+        </div>
         <p>
-          Hi,
+          Hi, I'm Josh - a software developer living in Berlin, originally from
+          Canberra, Australia. I have a passion for technology and human-
+          machine interaction. In my free time I like to sing karaoke, dance
+          salsa and play volleyball.
         </p>
         <p>
-          I'm Joshua Shone, a full-stack developer
-          living in Berlin and originally from Canberra,
-          Australia.
+          I've been working as a software developer professionally for over nine years.
         </p>
-      </div>
-      
-    </section>
-    
-    <section class="main-content">
-    
-      <h2>
-        Experience
-      </h2>
-      
-      <div class="boxed kiwi-box">
-        <a class="box-header" href="https://kiwi.ki">
-          <img alt="KIWI.KI GmbH logo" src="assets/kiwi-logo.svg">
-          KIWI.KI GmbH
-          <span class="attribute">7 months</span>
-        </a>
-        <ul class="box-content">
-          <li>
-            <span class="list-item-icon application-icon"></span>
-            <span>Web app development - Portal 1.1</span>
-            <span class="attribute">HTML5</span>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="boxed mediaware-box">
-        <a class="box-header" href="http://www.mediaware.com.au">
-          <img alt="General Dynamics Mediaware logo" src="assets/mediaware-logo.svg">
-          <span class="attribute">3.5 years</span>
-        </a>
-        <ul class="box-content">
-          <li>
-            <span class="list-item-icon product-icon"></span>
-            <span>Internal infrastructure - Web framework</span>
-            <span class="attribute">HTML5</span>
-          </li>
-          <li>
-            <span class="list-item-icon product-icon"></span>
-            <span>Product development - InStream</span>
-            <span class="attribute">C++</span>
-          </li>
-        </ul>
-      </div>
-      
-      <div class="boxed nch-box">
-        <a class="box-header" href="http://www.nch.com.au">
-          <img alt="NCH Software logo" src="assets/nch-logo.svg">
-          <span class="attribute">3.5 years</span>
-        </a>
-        <ul class="box-content">
-          <li>
-            <span class="list-item-icon application-icon"></span>
-            <span>Application development - Photopad</span>
-            <span class="attribute">C++</span>
-          </li>
-          <li>
-            <span class="list-item-icon application-icon"></span>
-            <span>Application development - Crescendo</span>
-            <span class="attribute">C++</span>
-          </li>
-        </ul>
-      </div>
-    
-      <h2>
-        Skills
-      </h2>
-      <div class="boxed logo-gallery">
-        <a class="library-link" href="https://www.polymer-project.org" title="Polymer">
-          <img alt="Polymer logo" src="assets/polymer-logo.svg">
-        </a>
-        <a class="library-link" href="http://backbonejs.org" title="Backbone.js">
-          <img alt="Backbone.js logo" src="assets/backbone-logo.svg">
-        </a>
-        <a class="library-link" href="https://www.google.com/design/spec/material-design/introduction.html" title="Material Design">
-          <img alt="Material design logo" src="assets/material-design-logo.svg">
-        </a>
-        <a class="library-link" href="https://nodejs.org" title="Node.JS">
-          <img alt="Node.js logo" src="assets/nodejs-logo.svg">
-        </a>
-        <a class="library-link" href="http://socket.io" title="Socket.io">
-          <img alt="socket.io logo" src="assets/socketio-logo.svg">
-        </a>
-        <a class="library-link" href="https://www.python.org" title="Python">
-          <img alt="Python logo" src="assets/python-logo.svg">
-        </a>
-        <a class="library-link" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" title="HTML5/CSS3/Javascript">
-          <img alt="Web technology logos" src="assets/web-tech-logos.svg">
-        </a>
-        <a class="library-link" href="http://sass-lang.com" title="SASS">
-          <img alt="SASS logo" src="assets/sass-logo.svg">
-        </a>
-        <a class="library-link" href="http://bower.io" title="Bower">
-          <img alt="Bower logo" src="assets/bower-logo.svg">
-        </a>
-        <a class="library-link" href="http://gulpjs.com" title="Gulp">
-          <img alt="Gulp logo" src="assets/gulp-logo.svg">
-        </a>
-        <a class="library-link" href="http://coffeescript.org" title="CoffeeScript">
-          <img alt="Coffeescript logo" src="assets/coffeescript-logo.svg">
-        </a>
-        <a class="library-link" href="https://git-scm.com" title="Git">
-          <img alt="Git logo" src="assets/git-logo.svg">
-        </a>
-        <a class="library-link" href="http://knockoutjs.com" title="Knockout.js">
-          <img alt="Knockout.js logo" src="assets/knockoutjs-logo.svg">
-        </a>
-        <a class="library-link" href="http://getbootstrap.com" title="Bootstrap">
-          <img alt="Bootstrap logo" src="assets/bootstrap-logo.svg">
-        </a>
-        <a class="library-link" href="https://jquery.com" title="jQuery">
-          <img alt="jQuery logo" src="assets/jquery-logo.svg">
-        </a>
-        <a class="library-link" href="https://twistedmatrix.com" title="Twisted">
-          <img alt="Twisted logo" src="assets/twisted-logo.svg">
-        </a>
-        <a class="library-link" href="https://en.wikipedia.org/wiki/C%2B%2B" title="C++">
-          C++
-        </a>
-      </div>
-      
-      <h2>
-        Education
-      </h2>
-      
-      <div class="boxed aie-box">
-        <a class="box-header" href="http://www.aie.edu.au/">
-          <img alt="AIE logo" src="assets/aie-logo.svg">
-          <span class="attribute">2 years</span>
-        </a>
-        <ul class="box-content">
-          <li>
-            <span class="list-item-icon certificate-icon"></span>
-            <span>Adv Diploma of Professional Game Development</span>
-            <span class="attribute">2008</span>
-          </li>
-          <li>
-            <span class="list-item-icon certificate-icon"></span>
-            <span>Cert IV in 3D Animation for Games and Film</span>
-            <span class="attribute">2007</span>
-          </li>
-        </ul>
-      </div>
-      
-    </section>
-
+        <p>
+          I've been facinated with computer programming since I was a kid, when I would spend enormous amounts of time learning about and tinkering with programming projects.
+        </p>
+        <p>
+          I first visited Berlin in 2015 and decided to move here shortly after. I currently live in Prenzlauer Berg.
+        </p>
+        <p>
+          I grew up in country Australia before moving to Canberra to study and begin work as a software developer.
+        </p>
+        <p>
+          I am currently attending a full-time intensive German language course.
+        </p>
+      </section>
+      <a class="section-header" href="#employment">
+        <h2>Employment/Education</h2>
+        <span class="timeline-row">
+          <span class="timeline-block aie"       data-start="01.01.2008" data-end="01.12.2008"></span>
+          <span class="timeline-block nch"       data-start="05.01.2009" data-end="23.08.2012"></span>
+          <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015"></span>
+          <span class="timeline-block kiwi"      data-start="01.06.2016" data-end="07.12.2018"></span>
+          <span class="timeline-block das"       data-start="01.01.2019" data-end="now"></span>
+        </span>
+      </a>
+      <section id="employment">
+        <p>
+          I have worked for several companies as a software developer, both in Australia as
+          well as Germany. My knowledge and expertise is full-stack, covering backend systems to
+          user-interface design. I have a special interest in user-interaction.
+        </p>
+        <p>  
+          From June 2016 to December 2018 I worked for KIWI.KI GmbH as a full-stack developer.
+          At KIWI I was responsible for a major overhaul of the KIWI Portal app, the primary
+          interface for business customers into KIWI.KI systems.
+        </p>
+        <p>
+          From September 2012 to December 2015 I worked for General Dynamics Mediaware.
+        </p>
+        <p>
+          From January 2009 to August 2012 I worked for NCH Software.
+          Immediately after completing my studies at the AIE, I was hired by NCH software.
+        </p>
+      </section>
+      <a class="section-header" href="#projects">
+        <h2>Projects</h2>
+        <span class="timeline-row">
+        </span>
+      </a>
+      <section id="projects">
+        <p>
+          Yarnball
+        </p>
+        <p>
+          Phone party
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
+        </p>
+      </section>
+      <a class="section-header" href="#philosophy">
+        <h2>Software development philosophy</h2>
+        <span class="timeline-row">
+        </span>
+      </a>
+      <section id="philosophy">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
+        </p>
+      </section>
+    </main>
   </body>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      height: 100%;
+      font-family: 'Merriweather', serif;
+      color: #8a9096;
+    }
+    header {
+      flex-shrink: 0;
+      margin-bottom: 10px;
+    }
+    #title-image {
+      width:  80px;
+      height: 80px;
+      border-radius: 100%;
+      background-color: #5d5d5d;
+      margin: 10px auto;
+    }
+    main {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      margin-bottom: 15px;
+    }
+    #vertical-separator {
+      position: fixed;
+      left: calc(50vw - 5px);
+      width: 10px;
+      top: 170px;
+      bottom: 15px;
+      background-color: #e2e6e9;
+      z-index: 2;
+    }
+    #timeline-header {
+      height: 25px;
+      width: 50vw;
+      position: relative;
+      flex-shrink: 0;
+      margin-bottom: 5px;
+    }
+    h1 {
+      text-align: center;
+      color: #5d5d5d;
+      font-weight: normal;
+    }
+    .section-header {
+      position: sticky;
+      height: 26px;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      box-sizing: border-box;
+      align-items: center;
+      background-color: #fff;
+    }
+    h2 {
+      flex-grow: 1;
+      flex-basis: 0;
+      order: 2;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 60px;
+      color: #525b69;
+      font-family: 'Volkhov', serif;
+      font-weight: normal;
+      align-self: stretch;
+    }
+    .section-header:nth-of-type(1) {
+      top: 0;
+    }
+    .section-header:nth-of-type(2) {
+      top: 30px;
+      bottom: 60px;
+    }
+    .section-header:nth-of-type(3) {
+      top: 60px;
+      bottom: 30px;
+    }
+    .section-header:nth-of-type(4) {
+      top: 90px;
+      bottom: 0;
+    }
+    .section-header div {
+      position: absolute;
+      top: 100%;
+    }
+    p {
+      margin-left: calc(50vw + 23px);
+    }
+    .timeline-row {
+      background-color: #e2e6e9;
+      flex-grow: 1;
+      flex-basis: 0;
+      order: 1;
+      position: relative;
+      height: 15px;
+    }
+    .timeline-block {
+      color: #e2e6e9;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      font-family: monospace;
+    }
+    #timeline-header .timeline-block {
+      margin-top: 5px;
+      padding-left: 6px;
+      font-family: 'Volkhov', serif;
+    }
+    #timeline-header .timeline-block::after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -3px;
+      width: 3px;
+      height: 12px;
+      background-color: #e2e6e9;
+    }
+    #timeline-header .timeline-block:first-of-type {
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    .timeline-block.australia {
+      background: linear-gradient(135deg, #262665, #262665 10px, #fff 10px, #fff 15px, #cf3030 15px, #cf3030 20px, #fff 20px, #fff 23px, #262665 23px, #262665);
+    }
+    .timeline-block.germany   {
+      background: linear-gradient(135deg, #000, #000 33%, #c83737 33%, #c83737 66%, #cfaf30 66%, #cfaf30);
+    }
+
+    .timeline-block.aie       { background-color: #0a2a3b;  }
+    .timeline-block.nch       { background-color: #de4b4b;  }
+    .timeline-block.mediaware { background-color: #274093;  }
+    .timeline-block.kiwi      { background-color: #95c233;  }
+    .timeline-block.das       { background-color: #fdc800; }
+
+    .hide-text {
+      font-size: 0;
+    }
+
+    .key-value-info {
+      float: right;
+    }
+    .key-value-item {
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: 30px 30px;
+      padding-left: 35px;
+      margin: 8px;
+    }
+    .key-value-item .value {
+      color: #5d5d5d;
+    }
+    .key-value-item.profession    { background-image: url("profession-icon.svg"); }
+    .key-value-item.location      { background-image: url("location-icon.svg");   }
+    .key-value-item.date-of-birth { background-image: url("date-of-birth-icon.svg");   }
+  </style>
+  <script>
+    let now = new Date();
+    now.setFullYear(now.getFullYear()+1)
+    function timeStringToYear(string) {
+      if (string === 'now') {
+        return now.getFullYear();
+      } else {
+        let parts = string.split('.');
+        const month = 1/12;
+        const day = month / 29.5;
+        return (parseInt(parts[0]-1) * day) + (parseInt(parts[1]-1) * month) + parseInt(parts[2]);
+      }
+    }
+    function bendTime(t) {
+      return t*t*t*t;
+    }
+    function yearToTimelinePercentage(year) {
+      return 100 * bendTime((year - 1989) / (now.getFullYear() - 1989));
+    }
+    let timelineHeader = document.getElementById('timeline-header');
+    for (let year = 1989; year < now.getFullYear(); year++) {
+      timelineHeader.insertAdjacentHTML(
+        'beforeend',
+        `<span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}">${year}</span>`
+      );
+    }
+    for (let block of document.getElementsByClassName('timeline-block')) {
+      let startYear = timeStringToYear(block.dataset.start);
+      let endYear   = timeStringToYear(block.dataset.end);
+      block.style.left  = yearToTimelinePercentage(startYear) + '%';
+      if (!block.closest('#timeline-header') || startYear > 1989) {
+        block.style.width = (yearToTimelinePercentage(endYear) - yearToTimelinePercentage(startYear)) + '%';
+      }
+    }
+    let totalYears = now.getFullYear() - 1989;
+    function adjustTimelineForWindowResize() {
+      let year = 1989;
+      for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
+        if (year > 1989) {
+          block.classList.toggle('hide-text', (window.innerWidth / 2) * (parseFloat(block.style.width) / 100) < 42);
+        }
+        year++;
+      }
+    }
+    adjustTimelineForWindowResize();
+    window.onresize = event => {
+      adjustTimelineForWindowResize();
+    }
+  </script>
 </html>
