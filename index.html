@@ -1,223 +1,328 @@
 <html>
   <head>
+    <title>Josh Shone</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Volkhov" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div id="title-image"></div>
-      <h1>Josh Shone<h2>
+      <img src="assets/profile_pic.jpg" alt="Josh Shone">
+      <h1>Josh Shone</h1>
+      <div class="top-links">
+        <a class="email" href="mailto:josh.shone@gmail.com"></a>
+        <a class="cv" href="cv/cv.pdf">CV</a>
+      </div>
     </header>
-    <div id="timeline-header"></div>
-    <div id="vertical-separator"></div>
-    <main>
-      <a class="section-header" href="#about">
-        <h2>About</h2>
-        <span class="timeline-row">
-          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015"><div>Australia</div></span>
-          <span class="timeline-block germany" data-start="24.08.2015" data-end="now"><div>Germany</div></span>
-        </span>
-      </a>
-      <span class="timeline-row">
-        <span class="timeline-block" data-start="26.09.1989" data-end="01.06.2015"><div>Parkour</div></span>
-        <span class="timeline-block" data-start="24.08.2015" data-end="now"><div>Karaoke</div></span>
-      </span>
-      <section id="about">
-        <div class="key-value-info">
-          <div class="key-value-item profession">
-            <div class="key">profession:</div>
-            <div class="value">Software Developer</div>
+    <h2><a href="#about">About</a></h2>
+    <section class="two-pane">
+      <div id="about" class="scroll-handle"></div>
+      <div class="two-pane">
+        <dl class="left-pane">
+          <div class="profession">
+            <dt>profession</dt>
+            <dd>Software Developer</dd>
           </div>
-          <div class="key-value-item location">
-            <div class="key">currently in:</div>
-            <div class="value">Berlin</div>
+          <div class="location">
+            <dt>location</dt>
+            <dd>Berlin</dd>
           </div>
-          <div class="key-value-item date-of-birth">
-            <div class="key">born:</div>
-            <div class="value">1989 (29)</div>
+          <div class="date-of-birth">
+            <dt>born</dt>
+            <dd>1989 (29)</dd>
           </div>
-        </div>
-        <p>
+        </dl>
+        <p class="right-pane">
           Hi, I'm Josh - a software developer living in Berlin, originally from
-          Canberra, Australia. I have a passion for technology and human-
-          machine interaction. In my free time I like to sing karaoke, dance
-          salsa and play volleyball.
+          Canberra, Australia. I love technology and have a special interest in human-
+          machine interaction. Sport and the outdoors keep me sane.
         </p>
-        <p>
-          I've been working as a software developer professionally for over nine years.
+      </div>
+      <div class="two-pane">
+        <ul class="left-pane">
+          <li><img src="assets/python-logo.svg" alt="Python"></li>
+          <li><img src="assets/es6-javascript-logo.svg" alt="ES6 Javascript"></li>
+          <li><img src="assets/html5-logo.svg" alt="HTML5"></li>
+          <li><img src="assets/css3-logo.svg" alt="CSS3"></li>
+          <li><img src="assets/go-logo.svg" alt="Go"></li>
+          <li><img src="assets/cpp-logo.svg" alt="C++"></li>
+        </ul>
+        <p class="right-pane">
+          I am a full-stack developer, with around 9 years of experience ranging from web development (Python, NodeJS, Javascript, HTML, CSS etc), to backend and system languages like C++ and Go.
         </p>
-        <p>
-          I've been facinated with computer programming since I was a kid, when I would spend enormous amounts of time learning about and tinkering with programming projects.
+      </div>
+      <div class="two-pane">
+        <ul class="left-pane">
+          <li><img src="assets/bouldering-logo.svg">Bouldering</li>
+          <li><img src="assets/volleyball-logo.svg">Volleyball</li>
+          <li><img src="assets/karaoke-logo.svg">Karaoke</li>
+        </ul>
+        <p class="right-pane">
+          In my free time I like to go bouldering, sing karaoke, and play volleyball.
         </p>
-        <p>
-          I first visited Berlin in 2015 and decided to move here shortly after. I currently live in Prenzlauer Berg.
-        </p>
-        <p>
-          I grew up in country Australia before moving to Canberra to study and begin work as a software developer.
-        </p>
-        <p>
-          I am currently attending a full-time intensive German language course.
-        </p>
-      </section>
-      <a class="section-header" href="#employment">
-        <h2>Employment/Education</h2>
-        <span class="timeline-row">
-          <span class="timeline-block aie"       data-start="01.01.2008" data-end="01.12.2008"></span>
-          <span class="timeline-block nch"       data-start="05.01.2009" data-end="23.08.2012"></span>
-          <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015"></span>
-          <span class="timeline-block kiwi"      data-start="01.06.2016" data-end="07.12.2018"></span>
-          <span class="timeline-block das"       data-start="01.01.2019" data-end="now"></span>
+      </div>
+    </section>
+    <h2><a href="#employment">Employment/Education</a></h2>
+    <div class="two-pane timeline-header-container">
+      <span class="left-pane" id="timeline-header"></span>
+      <span class="right-pane"></span>
+    </div>
+    <section  class="two-pane">
+      <div id="employment" class="scroll-handle"></div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015" nomarkers><div class="label">Australia</div></span>
+          <span class="timeline-block germany" data-start="24.08.2015" data-end="now" nomarkers><div class="label">Berlin, Germany</div></span>
         </span>
-      </a>
-      <section id="employment">
-        <p>
+        <p class="right-pane">
           I have worked for several companies as a software developer, both in Australia as
           well as Germany. My knowledge and expertise is full-stack, covering backend systems to
           user-interface design. I have a special interest in user-interaction.
         </p>
-        <p>  
-          From June 2016 to December 2018 I worked for KIWI.KI GmbH as a full-stack developer.
-          At KIWI I was responsible for a major overhaul of the KIWI Portal app, the primary
-          interface for business customers into KIWI.KI systems.
-        </p>
-        <p>
-          From September 2012 to December 2015 I worked for General Dynamics Mediaware.
-        </p>
-        <p>
-          From January 2009 to August 2012 I worked for NCH Software.
-          Immediately after completing my studies at the AIE, I was hired by NCH software.
-        </p>
-      </section>
-      <a class="section-header" href="#projects">
-        <h2>Projects</h2>
-        <span class="timeline-row">
+      </div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block das" data-start="01.01.2019" data-end="now"></span>
         </span>
-      </a>
-      <section id="projects">
-        <p>
-          Yarnball
-        </p>
-        <p>
-          Phone party
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
-        </p>
-      </section>
-      <a class="section-header" href="#philosophy">
-        <h2>Software development philosophy</h2>
-        <span class="timeline-row">
+        <span class="right-pane">
+          <img class="timeline-paragraph-header" src="assets/das-logo.svg" alt="DAS">
+          <p>
+            I am currently learning German at Deutsche Akademie für Sprachen, where I have acheived A2 level and am continuing with B1.
+          </p>
         </span>
+      </div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block kiwi" data-start="01.06.2016" data-end="07.12.2018"></span>
+        </span>
+        <span class="right-pane">
+          <img class="timeline-paragraph-header" src="assets/kiwi-logo.svg" alt="KIWI.KI GmbH">
+          <p>
+            Developed and released an overhauled version of KIWI's web app for housing companies, covering backend work in Python/Flask and frontend work in node.js/backbone. Also implemented user experience improvements to KIWI's consumer web frontend.
+          </p>
+        </span>
+      </div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015"></span>
+        </span>
+        <span class="right-pane">
+          <img class="timeline-paragraph-header" src="assets/mediaware-logo.svg" alt="Mediaware">
+          <p>
+            Initial role as C++ programmer engaged in performance analysis, debugging and feature development on a large codebase.
+            Worked in a mid-sized Agile team adhering to well-defined processes for issue-tracking, continuous integration, customer
+            feedback and development iterations.
+          </p>
+          <p>
+            Helped develop the company's flagship product InStream, a high-performance multi-threaded video processing service for
+            broadcast television. Also engaged in R&D, producing working prototypes for new products - one of which went on to be
+            used by Australian firefighting services.
+          </p>
+        </span>
+      </div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block nch" data-start="05.01.2009" data-end="23.08.2012"></span>
+        </span>
+        <span class="right-pane">
+          <img class="timeline-paragraph-header" src="assets/nch-logo.svg" alt="NCH Software">
+          <p>
+            Was responsible for creating several native desktop applications from scratch, including a non-destructive photo editor and
+            musical notation software. Initial concept, design, mockups, prototyping, development and release was handled either solo
+            or in small teams. Highlights:
+          </p>
+          <ul>
+            <li>Designed a unique modeless editing UI for sheet music.</li>
+            <li>Implemented a dynamic level-of-detail system for smoothly scaling fast fourier transform visualizations.</li>
+            <li>Developed a high-performance non-destructive image transformation and layering system.</li>
+          </ul>
+        </span>
+      </div>
+      <div class="two-pane">
+        <span class="left-pane timeline-row">
+          <span class="timeline-block aie" data-start="01.01.2008" data-end="01.12.2008"></span>
+        </span>
+        <span class="right-pane">
+          <img class="timeline-paragraph-header" src="assets/aie-logo.svg" alt="AIE">
+          <p>
+            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++) as well as 3D art/modelling, achieving an Advanced Diploma of Professional Game Development.
+          </p>
+        </span>
+      </div>
+    </section>
+    <h2><a href="#projects">Projects</a></h2>
+    <section class="projects">
+      <div id="projects" class="scroll-handle"></div>
+      <a class="project-card" href="https://joshshone.com/yarnball">
+        <img src="assets/yarnball-projectcard.svg">
       </a>
-      <section id="philosophy">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc luctus eleifend dui, facilisis lobortis metus aliquet et. Mauris bibendum posuere est ut finibus. Fusce sed sollicitudin leo. In nibh nisl, tempus sit amet urna quis, aliquet auctor orci. Phasellus felis dui, suscipit ac turpis vitae, sagittis commodo lacus. Fusce volutpat lorem non ipsum venenatis, finibus tristique dui egestas. Donec et orci quis lorem efficitur tempus at vel leo. Donec blandit, tellus id tristique malesuada, augue sapien laoreet sem, sed pulvinar felis lacus at arcu. Curabitur eleifend suscipit mi sit amet vulputate. Nam eget pretium nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean vel malesuada urna. Duis gravida ultrices bibendum.
-        </p>
-      </section>
-    </main>
+      <a class="project-card" href="https://github.com/joshua-shone/phone-party">
+        <img src="assets/phoneparty-projectcard.svg">
+      </a>
+    </section>
   </body>
   <style>
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
     body {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      height: 100%;
+      margin: 0.5rem;
       font-family: 'Merriweather', serif;
       color: #8a9096;
+      padding-top: 9rem;
     }
     header {
-      flex-shrink: 0;
-      margin-bottom: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0.8rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: #fff;
+      z-index: 2;
+      height: 9rem;
     }
-    #title-image {
-      width:  80px;
-      height: 80px;
+    header img {
+      display: inline-block;
+      width:  5rem;
+      height: 5rem;
       border-radius: 100%;
       background-color: #5d5d5d;
-      margin: 10px auto;
+      margin-right: 1.5rem;
     }
-    main {
-      overflow-y: auto;
-      scroll-behavior: smooth;
-      margin-bottom: 15px;
+    .top-links {
+      position: absolute;
+      right: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
-    #vertical-separator {
-      position: fixed;
-      left: calc(50vw - 5px);
-      width: 10px;
-      top: 170px;
-      bottom: 15px;
-      background-color: #e2e6e9;
+    .top-links a {
+      color: #8a9096;
+      font-size: 1.1rem;
+      text-align: right;
+      text-decoration: none;
+      padding: 0.6rem;
+/*       margin-bottom: 0.7rem; */
+    }
+    .top-links a:hover {
+      background-color: #8a9096;
+      color: #fff;
+    }
+    .top-links .email {
+      background-image: url("assets/email-icon.svg");
+      background-position: right;
+      background-size: 1.5rem;
+      background-repeat: no-repeat;
+      padding-right: 2.2rem;
+    }
+    .top-links .email:before {
+      content: 'josh.shone@gmail.com';
+    }
+    .top-links .cv {
+      background-image: url("assets/pdf-icon.svg");
+      background-position: right;
+      background-size: 1.3rem;
+      background-repeat: no-repeat;
+      padding-right: 2rem;
+      font-weight: bold;
+    }
+    .timeline-header-container {
+      position: sticky;
+      top: calc(9rem + (1.75rem * 2));
       z-index: 2;
     }
     #timeline-header {
-      height: 25px;
-      width: 50vw;
-      position: relative;
+      height: 1.5rem;
+      width: 100%;
       flex-shrink: 0;
-      margin-bottom: 5px;
+      margin-bottom: 0.4rem;
+      position: relative;
+      background-color: #fff;
     }
     h1 {
-      text-align: center;
       color: #5d5d5d;
       font-weight: normal;
     }
-    .section-header {
-      position: sticky;
-      height: 26px;
-      display: flex;
-      flex-direction: row;
-      text-decoration: none;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      box-sizing: border-box;
-      align-items: center;
-      background-color: #fff;
-    }
     h2 {
-      flex-grow: 1;
-      flex-basis: 0;
-      order: 2;
+      position: sticky;
+      z-index: 2;
       margin-top: 0;
       margin-bottom: 0;
-      margin-left: 60px;
+      height: 1.8rem;
       color: #525b69;
+      background-color: #fff;
       font-family: 'Volkhov', serif;
       font-weight: normal;
-      align-self: stretch;
+      text-align: center;
     }
-    .section-header:nth-of-type(1) {
-      top: 0;
+    h2 a {
+      display: block;
+      text-decoration: none;
+      color: #525b69;
     }
-    .section-header:nth-of-type(2) {
-      top: 30px;
-      bottom: 60px;
+    h2 a:hover {
+      background-color: #525b69;
+      color: #fff;
     }
-    .section-header:nth-of-type(3) {
-      top: 60px;
-      bottom: 30px;
+    h2:nth-of-type(1) {
+      top: 9rem;
     }
-    .section-header:nth-of-type(4) {
-      top: 90px;
+    h2:nth-of-type(2) {
+      top: calc(9rem + 1.7rem);
+      bottom: 1.7rem;
+    }
+    h2:nth-of-type(3) {
+      top: calc(9rem + 1.7rem + 1.7rem);
       bottom: 0;
     }
-    .section-header div {
-      position: absolute;
-      top: 100%;
+    section {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      min-height: calc(100vh - (9rem /*header*/ + (1.8rem * 3) /*H2s*/));
     }
-    p {
-      margin-left: calc(50vw + 23px);
+    .scroll-handle {
+      position: absolute;
+    }
+    section:nth-of-type(1) .scroll-handle { top: calc(-9rem + -1.7rem); }
+    section:nth-of-type(2) .scroll-handle { top: calc(-9rem + (-1.7rem * 2) + -3rem); }
+    section:nth-of-type(3) .scroll-handle { top: calc(-9rem + (-1.7rem * 3)); }
+    section {
+      max-width: none;
+    }
+    section.two-pane:before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: calc(50% - 0.3rem);
+      width: 0.6rem;
+      top: 0;
+      bottom: 0;
+      background-color: #e2e6e9;
+    }
+    div.two-pane {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 1rem;
+    }
+    .left-pane {
+      flex-basis: 0;
+      flex-grow: 1;
+      margin-right: 1rem;
+      text-align: right;
+    }
+    div.two-pane .right-pane {
+      flex-basis: 0;
+      flex-grow: 1;
+      margin-left: 1rem;
     }
     .timeline-row {
-      background-color: #e2e6e9;
       flex-grow: 1;
       flex-basis: 0;
-      order: 1;
       position: relative;
       height: 15px;
     }
@@ -226,7 +331,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      font-family: monospace;
+      text-align: left;
     }
     #timeline-header .timeline-block {
       margin-top: 5px;
@@ -248,6 +353,50 @@
       z-index: 1;
     }
 
+    .timeline-block .label {
+      color: #525b69;
+      position: absolute;
+      top: 100%;
+      margin-top: 5px;
+    }
+
+    .timeline-block .duration {
+      position: absolute;
+      bottom: 100%;
+      padding-bottom: 5px;
+      left:  -150px;
+      right: -150px;
+      text-align: center;
+      color: #525b69;
+    }
+    .timeline-block .duration.right-aligned {
+      right: 0;
+      text-align: right;
+    }
+
+    .timeline-block .date-marker {
+      position: absolute;
+      top: 100%;
+      width: 300px;
+      padding-top: 25px;
+      text-align: center;
+      color: #525b69;
+      display: flex;
+      justify-content: center;
+    }
+    .timeline-block .date-marker:after {
+      content: '';
+      display: block;
+      width: 1px;
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      height: 20px;
+      background-color: #000;
+    }
+    .timeline-block .date-marker.start { left:  -150px; }
+    .timeline-block .date-marker.end   { right: -150px; }
+
     .timeline-block.australia {
       background: linear-gradient(135deg, #262665, #262665 10px, #fff 10px, #fff 15px, #cf3030 15px, #cf3030 20px, #fff 20px, #fff 23px, #262665 23px, #262665);
     }
@@ -255,80 +404,222 @@
       background: linear-gradient(135deg, #000, #000 33%, #c83737 33%, #c83737 66%, #cfaf30 66%, #cfaf30);
     }
 
-    .timeline-block.aie       { background-color: #0a2a3b;  }
-    .timeline-block.nch       { background-color: #de4b4b;  }
-    .timeline-block.mediaware { background-color: #274093;  }
-    .timeline-block.kiwi      { background-color: #95c233;  }
+    .timeline-block.aie       { background-color: #0a2a3b; }
+    .timeline-block.nch       { background-color: #de4b4b; }
+    .timeline-block.mediaware { background-color: #274093; }
+    .timeline-block.kiwi      { background-color: #95c233; }
     .timeline-block.das       { background-color: #fdc800; }
+
+    .timeline-paragraph-header {
+      height: 2em;
+    }
 
     .hide-text {
       font-size: 0;
     }
 
-    .key-value-info {
-      float: right;
-    }
-    .key-value-item {
+    dl > * {
+      display: inline-block;
       background-repeat: no-repeat;
       background-position: left;
-      background-size: 30px 30px;
-      padding-left: 35px;
-      margin: 8px;
+      background-size: 2rem 2rem;
+      padding-left: 2.2rem;
+      margin: 0.5rem;
+      text-align: left;
     }
-    .key-value-item .value {
+    dt:after {
+      content: ':';
+    }
+    dd {
       color: #5d5d5d;
+      margin-left: 0;
     }
-    .key-value-item.profession    { background-image: url("profession-icon.svg"); }
-    .key-value-item.location      { background-image: url("location-icon.svg");   }
-    .key-value-item.date-of-birth { background-image: url("date-of-birth-icon.svg");   }
+    dl .profession    { background-image: url("assets/profession-icon.svg");    }
+    dl .location      { background-image: url("assets/map-pin.svg");            }
+    dl .date-of-birth { background-image: url("assets/date-of-birth-icon.svg"); }
+
+    ul.left-pane {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul.left-pane {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+    ul.left-pane li {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 1.5rem;
+      color: #5d5d5d;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    ul.left-pane li img {
+      height: 2.2rem;
+    }
+
+    section.projects {
+      max-width: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .project-card {
+      display: inline-block;
+      width:  12rem;
+      height: 12rem;
+      position: relative;
+      margin: 0.5rem;
+    }
+    .project-card img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    @media (max-width: 1023px) {
+      .top-links .email:before {
+        content: 'email';
+        font-weight: bold;
+      }
+      #timeline-header {
+        display: none;
+      }
+      .timeline-row {
+        visibility: hidden;
+      }
+      .timeline-block {
+        position: initial;
+      }
+      .timeline-row .duration {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: initial;
+      }
+      div.two-pane {
+        flex-direction: column;
+      }
+      .left-pane {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+      div.two-pane .right-pane {
+        margin-left: 0;
+      }
+      section.two-pane:before {
+        display: none;
+      }
+      section {
+        max-width: 40rem;
+      }
+      dl.left-pane {
+        display: flex;
+        justify-content: space-between;
+      }
+      ul.left-pane {
+        justify-content: space-between;
+      }
+      ul.left-pane li {
+        margin-left: 0;
+      }
+      ul.left-pane li img {
+        height: 1.7rem;
+      }
+      p {
+        text-align: justify;
+      }
+    }
+    @media (max-width: 500px) {
+      html {
+        font-size: 3.2vw;
+      }
+    }
   </style>
   <script>
-    let now = new Date();
-    now.setFullYear(now.getFullYear()+1)
+    "use strict";
+
+    const now = new Date();
+    function datetimeToYearFloat(datetime) {
+      return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
+    }
     function timeStringToYear(string) {
       if (string === 'now') {
-        return now.getFullYear();
+        return datetimeToYearFloat(now);
       } else {
-        let parts = string.split('.');
-        const month = 1/12;
-        const day = month / 29.5;
-        return (parseInt(parts[0]-1) * day) + (parseInt(parts[1]-1) * month) + parseInt(parts[2]);
+        const [day, month, year] = string.split('.').map(s => parseInt(s));
+        return year + ((month-1) * 1/12) + ((day-1) * 1/365);
       }
     }
     function bendTime(t) {
       return t*t*t*t;
     }
+    const timelineStart = 1989 + ((1/12)*9) + ((1/365)*26);
+    const timelineEnd = datetimeToYearFloat(now);
     function yearToTimelinePercentage(year) {
-      return 100 * bendTime((year - 1989) / (now.getFullYear() - 1989));
+      return 100 * bendTime((year - timelineStart) / (timelineEnd - timelineStart));
     }
-    let timelineHeader = document.getElementById('timeline-header');
-    for (let year = 1989; year < now.getFullYear(); year++) {
-      timelineHeader.insertAdjacentHTML(
-        'beforeend',
-        `<span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}">${year}</span>`
-      );
+    const timelineHeader = document.getElementById('timeline-header');
+    for (let year = 1989; year < now.getFullYear()+1; year++) {
+      timelineHeader.insertAdjacentHTML('beforeend', `<span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}">${year}</span>`);
     }
     for (let block of document.getElementsByClassName('timeline-block')) {
-      let startYear = timeStringToYear(block.dataset.start);
-      let endYear   = timeStringToYear(block.dataset.end);
-      block.style.left  = yearToTimelinePercentage(startYear) + '%';
-      if (!block.closest('#timeline-header') || startYear > 1989) {
+      const startYear = timeStringToYear(block.dataset.start);
+      const endYear   = timeStringToYear(block.dataset.end);
+      block.style.left = yearToTimelinePercentage(startYear) + '%';
+      if (startYear > 1989) {
         block.style.width = (yearToTimelinePercentage(endYear) - yearToTimelinePercentage(startYear)) + '%';
       }
-    }
-    let totalYears = now.getFullYear() - 1989;
-    function adjustTimelineForWindowResize() {
-      let year = 1989;
-      for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
-        if (year > 1989) {
-          block.classList.toggle('hide-text', (window.innerWidth / 2) * (parseFloat(block.style.width) / 100) < 42);
+      if (!block.closest('#timeline-header') && !block.hasAttribute('nomarkers')) {
+        const durationText = document.createElement('div');
+        durationText.classList.add('duration');
+        durationText.classList.toggle('right-aligned', block.dataset.end === 'now');
+        const duration = endYear - startYear;
+        const years = Math.floor(duration);
+        const months = Math.round((duration%1) * 12);
+        if (duration < 1) {
+          durationText.textContent = `${months} month${months>=2 ? 's' : ''}`;
+        } else if (months > 0) {
+          durationText.textContent = `${years} year${years>=2?'s':''}, ${months} month${months>=2 ? 's' : ''}`;
+        } else {
+          durationText.textContent = `${years} year${years>=2?'s':''}`;
         }
-        year++;
+        block.appendChild(durationText);
+        block.insertAdjacentHTML('beforeend', `<div class="date-marker start"><span>${block.dataset.start}</span></div>`);
+        if (block.dataset.end !== 'now') {
+          block.insertAdjacentHTML('beforeend', `<div class="date-marker end">  <span>${block.dataset.end}  </span></div>`);
+        }
+      }
+    }
+    function getTimelineBlockWidthPx(block) {
+      return (window.innerWidth / 2) * (parseFloat(block.style.width) / 100);
+    }
+    function adjustTimelineForWindowResize() {
+      for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
+        block.classList.toggle('hide-text', (block.textContent !== '1989') && (getTimelineBlockWidthPx(block) < 42));
+      }
+      for (let block of document.getElementsByClassName('timeline-block')) {
+        const startMarker = block.querySelector('.date-marker.start span');
+        const endMarker   = block.querySelector('.date-marker.end span');
+        if (startMarker && endMarker) {
+          const blockWidth = getTimelineBlockWidthPx(block);
+          const markerWidth = 86;
+          const distanceBetweenMarkers = blockWidth - markerWidth;
+          if (distanceBetweenMarkers < 15) {
+            startMarker.style.marginRight = (15 - distanceBetweenMarkers) + 'px';
+            endMarker.style.marginLeft    = (15 - distanceBetweenMarkers) + 'px';
+          }
+        }
       }
     }
     adjustTimelineForWindowResize();
-    window.onresize = event => {
-      adjustTimelineForWindowResize();
-    }
+    window.onresize = adjustTimelineForWindowResize;
   </script>
 </html>
