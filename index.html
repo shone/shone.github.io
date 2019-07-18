@@ -46,10 +46,10 @@
           <li><img src="assets/css3-logo.svg" alt="CSS3"></li>
           <li><img src="assets/go-logo.svg" alt="Go"></li>
           <li><img src="assets/cpp-logo.svg" alt="C++"></li>
+          <li><img src="assets/kubernetes-logo.svg" alt="Kubernetes"></li>
         </ul>
         <p class="right-pane">
-          I am a full-stack developer, with around 9 years of experience ranging from web development (Python,
- NodeJS, Javascript, HTML, CSS etc), to backend and system languages like C++ and Go.
+          I am a full-stack developer, with around 9 years of experience ranging from web development (Python, NodeJS, Javascript, HTML, CSS etc), to backend and system languages like C++ and Go.
         </p>
       </div>
       <div class="two-pane">
@@ -88,7 +88,7 @@
         <span class="right-pane">
           <img class="timeline-paragraph-header" src="assets/das-logo.svg" alt="DAS">
           <p>
-            I am currently learning German at Deutsche Akademie für Sprachen, where I have acheived A2 level and am continuing with B1.
+            I am currently learning German full-time at Deutsche Akademie für Sprachen, where I have acheived A2 level and am continuing with B1.
           </p>
         </span>
       </div>
@@ -99,7 +99,10 @@
         <span class="right-pane">
           <img class="timeline-paragraph-header" src="assets/kiwi-logo.svg" alt="KIWI.KI GmbH">
           <p>
-            Developed and released an overhauled version of KIWI's web app for housing companies, covering backend work in Python/Flask and frontend work in node.js/backbone. Also implemented user experience improvements to KIWI's consumer web frontend.
+            Developed and released an overhauled version of KIWI's web-based portal for housing companies, covering back-end work (Python, Flask), database refactoring (PostgreSQL), front-end design and implementation (ES6 Javascript, Backbone, Foundation CSS), build system re-tooling (NodeJS, Gulp), and deployment (Kubernetes).
+          </p>
+          <p>
+            My work at KIWI was often truely full-stack, with tasks requiring me to flash hardware to test new firmware, delve into dense SQL queries, all the way up to UI-design and user-experience considerations; even some graphic-design.
           </p>
         </span>
       </div>
@@ -207,7 +210,6 @@
       text-align: right;
       text-decoration: none;
       padding: 0.6rem;
-/*       margin-bottom: 0.7rem; */
     }
     .top-links a:hover {
       background-color: #8a9096;
@@ -295,6 +297,9 @@
     section {
       max-width: none;
     }
+    section.two-pane:nth-of-type(1):before {
+      top: 1rem;
+    }
     section.two-pane:before {
       display: block;
       content: '';
@@ -313,13 +318,13 @@
     .left-pane {
       flex-basis: 0;
       flex-grow: 1;
-      margin-right: 1rem;
+      margin-right: 2rem;
       text-align: right;
     }
     div.two-pane .right-pane {
       flex-basis: 0;
       flex-grow: 1;
-      margin-left: 1rem;
+      margin-left: 2rem;
     }
     .timeline-row {
       flex-grow: 1;
