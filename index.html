@@ -13,6 +13,7 @@
       <div class="top-links">
         <a class="email" href="mailto:josh.shone@gmail.com"></a>
         <a class="cv" href="cv/cv.pdf">CV</a>
+        <a class="github" href="https://github.com/joshua-shone">GitHub</a>
       </div>
     </header>
     <h2><a href="#about">About</a></h2>
@@ -214,6 +215,10 @@
       text-align: right;
       text-decoration: none;
       padding: 0.5rem;
+      background-position: right 0.5rem center;
+      background-size: 1.5rem;
+      background-repeat: no-repeat;
+      padding-right: 2.4rem;
     }
     .top-links a:hover {
       background-color: #525b69;
@@ -221,20 +226,16 @@
     }
     .top-links .email {
       background-image: url("assets/email-icon.svg");
-      background-position: right 0.5rem center;
-      background-size: 1.5rem;
-      background-repeat: no-repeat;
-      padding-right: 2.4rem;
     }
     .top-links .email:before {
       content: 'josh.shone@gmail.com';
     }
     .top-links .cv {
       background-image: url("assets/pdf-icon.svg");
-      background-position: right 0.5rem center;
-      background-size: 1.3rem;
-      background-repeat: no-repeat;
-      padding-right: 2.4rem;
+      font-weight: bold;
+    }
+    .top-links .github {
+      background-image: url("assets/github-logo.svg");
       font-weight: bold;
     }
     .timeline-header-container {
