@@ -151,8 +151,12 @@
         <span class="right-pane">
           <img class="timeline-paragraph-header" src="assets/aie-logo.svg" alt="AIE">
           <p>
-            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++) as well as 3D art/modelling, achieving an Advanced Diploma of Professional Game Development.
+            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++) as well as 3D art/modelling. Some of the software covered was Unreal Engine and 3ds Max.
           </p>
+          <ul class="certificate-list">
+            <li>Advanced Diploma of Professional Game Development</li>
+            <li>Cert IV in 3D Animation for Games and Film</li>
+          </ul>
         </span>
       </div>
     </section>
@@ -472,13 +476,26 @@
       height: 2.2rem;
     }
 
+    .certificate-list {
+      list-style-type: none;
+      padding-left: 1.5rem;
+    }
+    .certificate-list li {
+      background-image: url("assets/certificate-icon.svg");
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: 1.3rem;
+      padding-left: 2rem;
+      margin: 0.5rem;
+    }
+
     section.projects {
       max-width: none;
       display: flex;
       flex-direction: row;
       justify-content: center;
     }
-    
+
     .project-card {
       display: inline-block;
       width:  12rem;
