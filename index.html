@@ -1,118 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
+    <meta charset="utf-8"/>
+
     <title>Josh Shone</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+    <meta name="theme-color" content="#002b36">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Volkhov" rel="stylesheet">
   </head>
+
   <body>
-    <header>
+
+    <h1>
       <img src="assets/profile_pic.jpg" alt="Josh Shone">
-      <h1>Josh Shone</h1>
-      <div class="top-links">
-        <a class="email" href="mailto:josh.shone@gmail.com"></a>
-        <a class="cv" href="cv/cv.pdf">CV</a>
-        <a class="github" href="https://github.com/joshua-shone">GitHub</a>
+    </h1>
+
+    <section>
+      <div>
+        <ul class="graphical">
+          <li class="profession">Software Developer</li>
+          <li class="location">Berlin</li>
+          <li class="date-of-birth">1989 (age&nbsp;<span id="age">30</span>)</li>
+        </ul>
+        <div class="textual">
+          <p>
+            Hi, I'm Josh Shone - a software developer living in Berlin, originally from
+            Canberra, Australia. I love technology and have a special interest in human -
+            machine interaction. Sport and the outdoors keep me sane.
+          </p>
+          <a class="email"  href="mailto:josh.shone@gmail.com">email</a>
+          <a class="cv"     href="cv/cv.pdf">CV</a>
+          <a class="github" href="https://github.com/joshua-shone">GitHub</a>
+        </div>
       </div>
-    </header>
-    <h2><a href="#about">About</a></h2>
-    <section class="two-pane">
-      <div id="about" class="scroll-handle"></div>
-      <div class="two-pane">
-        <dl class="left-pane">
-          <div class="profession">
-            <dt>profession</dt>
-            <dd>Software Developer</dd>
-          </div>
-          <div class="location">
-            <dt>location</dt>
-            <dd>Berlin</dd>
-          </div>
-          <div class="date-of-birth">
-            <dt>born</dt>
-            <dd>1989 (<span id="age">30</span>)</dd>
-          </div>
-        </dl>
-        <p class="right-pane">
-          Hi, I'm Josh - a software developer living in Berlin, originally from
-          Canberra, Australia. I love technology and have a special interest in human-
-          machine interaction. Sport and the outdoors keep me sane.
+      <div>
+        <ul class="graphical">
+          <li class="python-logo"     title="Python">         </li>
+          <li class="es6-logo"        title="ES6 Javascript"> </li>
+          <li class="html5-logo"      title="HTML5">          </li>
+          <li class="css3-logo"       title="CSS3">           </li>
+          <li class="go-logo"         title="Go">             </li>
+          <li class="cpp-logo"        title="C++">            </li>
+          <li class="kubernetes-logo" title="Kubernetes">     </li>
+        </ul>
+        <p class="textual">
+          I am a full-stack developer, with around 9 years of experience ranging from web
+          development (Python, Node.js, Javascript, HTML, CSS etc), to backend and system
+          languages like C++ and Go.
         </p>
       </div>
-      <div class="two-pane">
-        <ul class="left-pane">
-          <li><img src="assets/python-logo.svg" alt="Python"></li>
-          <li><img src="assets/es6-javascript-logo.svg" alt="ES6 Javascript"></li>
-          <li><img src="assets/html5-logo.svg" alt="HTML5"></li>
-          <li><img src="assets/css3-logo.svg" alt="CSS3"></li>
-          <li><img src="assets/go-logo.svg" alt="Go"></li>
-          <li><img src="assets/cpp-logo.svg" alt="C++"></li>
-          <li><img src="assets/kubernetes-logo.svg" alt="Kubernetes"></li>
+      <div>
+        <ul class="graphical">
+          <li><span class="bouldering-icon" title="Bouldering"> </span></li>
+          <li><span class="volleyball-icon" title="Volleyball"> </span></li>
+          <li><span class="karaoke-icon"    title="Karaoke">    </span></li>
+          <li><span class="bicycle-icon"    title="Cycling">    </span></li>
         </ul>
-        <p class="right-pane">
-          I am a full-stack developer, with around 9 years of experience ranging from web development (Python, NodeJS, Javascript, HTML, CSS etc), to backend and system languages like C++ and Go.
-        </p>
-      </div>
-      <div class="two-pane">
-        <ul class="left-pane">
-          <li><img src="assets/bouldering-logo.svg">Bouldering</li>
-          <li><img src="assets/volleyball-logo.svg">Volleyball</li>
-          <li><img src="assets/karaoke-logo.svg">Karaoke</li>
-        </ul>
-        <p class="right-pane">
-          In my free time I like to go bouldering, sing karaoke, and play volleyball.
+        <p class="textual">
+          In my free time I like to go bouldering, sing karaoke, and play volleyball. I'm a
+          big fan of bicycle transport; I cycle everywhere all-year-round - rain, hail or shine.
         </p>
       </div>
     </section>
-    <h2><a href="#employment">Employment/Education</a></h2>
-    <div class="two-pane timeline-header-container">
-      <span class="left-pane" id="timeline-header"></span>
-      <span class="right-pane"></span>
-    </div>
-    <section  class="two-pane">
-      <div id="employment" class="scroll-handle"></div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
-          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015" nomarkers><div class="label">Australia</div></span>
-          <span class="timeline-block germany" data-start="24.08.2015" data-end="now" nomarkers><div class="label">Berlin, Germany</div></span>
+
+    <h2><a href="#history">History</a></h2>
+    <span id="timeline-header"></span>
+    <section id="history-section">
+      <span id="history" class="scroll-handle"></span>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015" nomarkers>
+            <div class="label">Australia</div>
+          </span>
+          <span class="timeline-block germany" data-start="24.08.2015" data-end="now" nomarkers>
+            <div class="label">Berlin</div>
+          </span>
         </span>
-        <p class="right-pane">
+        <p class="textual">
           I have worked for several companies as a software developer, both in Australia as
           well as Germany. My knowledge and expertise is full-stack, covering backend systems to
           user-interface design. I have a special interest in user-interaction.
         </p>
       </div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block flowkey" data-start="22.10.2019" data-end="now"></span>
+        </span>
+        <span class="textual">
+          <img class="timeline-paragraph-header" src="assets/flowkey-logo.svg" alt="flowkey">
+          <p>
+            I currently work at flowkey GmbH, helping to develop their app for learning piano.
+          </p>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
           <span class="timeline-block das" data-start="01.01.2019" data-end="now"></span>
         </span>
-        <span class="right-pane">
+        <span class="textual">
           <img class="timeline-paragraph-header" src="assets/das-logo.svg" alt="DAS">
           <p>
             I am currently learning German full-time at Deutsche Akademie für Sprachen, where I have acheived A2 level and am continuing with B1.
           </p>
         </span>
       </div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
+      <div>
+        <span class="graphical timeline-row">
           <span class="timeline-block kiwi" data-start="01.06.2016" data-end="07.12.2018"></span>
         </span>
-        <span class="right-pane">
+        <span class="textual">
           <img class="timeline-paragraph-header" src="assets/kiwi-logo.svg" alt="KIWI.KI GmbH">
           <p>
-            Developed and released an overhauled version of KIWI's web-based portal for housing companies, covering back-end work (Python, Flask), database refactoring (PostgreSQL), front-end design and implementation (ES6 Javascript, Backbone, Foundation CSS), build system re-tooling (NodeJS, Gulp), and deployment (Kubernetes).
+            Developed and released an overhauled version of KIWI's web-based portal for housing
+            companies, covering back-end work (Python, Flask), database refactoring (PostgreSQL),
+            front-end design and implementation (ES6 Javascript, Backbone, Foundation CSS), build
+            system re-tooling (NodeJS, Gulp), and deployment (Kubernetes).
           </p>
           <p>
-            My work at KIWI was often truely full-stack, with tasks requiring me to flash hardware to test new firmware, delve into dense SQL queries, all the way up to UI-design and user-experience considerations; even some graphic-design.
+            My work at KIWI was often truely full-stack, with tasks requiring me to flash hardware
+            to test new firmware, delve into dense SQL queries, all the way up to UI-design and
+            user-experience considerations; even some graphic-design.
           </p>
         </span>
       </div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
+      <div>
+        <span class="graphical timeline-row">
           <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015"></span>
         </span>
-        <span class="right-pane">
+        <span class="textual">
           <img class="timeline-paragraph-header" src="assets/mediaware-logo.svg" alt="Mediaware">
           <p>
             Initial role as C++ programmer engaged in performance analysis, debugging and feature development on a large codebase.
@@ -126,11 +146,11 @@
           </p>
         </span>
       </div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
+      <div>
+        <span class="graphical timeline-row">
           <span class="timeline-block nch" data-start="05.01.2009" data-end="23.08.2012"></span>
         </span>
-        <span class="right-pane">
+        <span class="textual">
           <img class="timeline-paragraph-header" src="assets/nch-logo.svg" alt="NCH Software">
           <p>
             Was responsible for creating several native desktop applications from scratch, including a non-destructive photo editor and
@@ -144,14 +164,15 @@
           </ul>
         </span>
       </div>
-      <div class="two-pane">
-        <span class="left-pane timeline-row">
+      <div>
+        <span class="graphical timeline-row">
           <span class="timeline-block aie" data-start="01.01.2008" data-end="01.12.2008"></span>
         </span>
-        <span class="right-pane">
+        <span class="textual">
           <img class="timeline-paragraph-header" src="assets/aie-logo.svg" alt="AIE">
           <p>
-            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++) as well as 3D art/modelling. Some of the software covered was Unreal Engine and 3ds Max.
+            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++)
+            as well as 3D art/modelling. Some of the software covered was Unreal Engine and 3ds Max.
           </p>
           <ul class="certificate-list">
             <li>Advanced Diploma of Professional Game Development</li>
@@ -160,511 +181,56 @@
         </span>
       </div>
     </section>
+
     <h2><a href="#projects">Projects</a></h2>
-    <section class="projects">
-      <div id="projects" class="scroll-handle"></div>
-      <a class="project-card" href="https://joshshone.com/yarnball">
-        <img src="assets/yarnball-projectcard.svg">
-      </a>
-      <a class="project-card" href="https://github.com/joshua-shone/phone-party">
-        <img src="assets/phoneparty-projectcard.svg">
-      </a>
-      <a class="project-card" href="https://joshshone.com/piano">
-        <img src="assets/piano-projectcard.svg">
-      </a>
+    <section>
+      <span id="projects" class="scroll-handle"></span>
+      <div>
+        <span class="graphical yarnball-logo"></span>
+        <div class="textual">
+          <h3>Yarnball</h3>
+          <p>
+            An experimental graph editor concept.
+          </p>
+          <a href="https://github.com/joshua-shone/yarnball">GitHub</a>
+          <a href="https://joshshone.com/yarnball/">Demo</a>
+        </div>
+      </div>
+      <div>
+        <span class="graphical phone-party-logo"></span>
+        <div class="textual">
+          <h3>Phone Party</h3>
+          <p>
+            A framework for multiplayer party games.
+          </p>
+          <a href="https://github.com/joshua-shone/phone-party">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <span class="graphical piano-logo"></span>
+        <div class="textual">
+          <h3>Piano</h3>
+          <p>
+            A simple multi-touch piano app.
+          </p>
+          <a href="https://github.com/joshua-shone/piano">GitHub</a>
+          <a href="https://joshshone.com/piano">Demo</a>
+        </div>
+      </div>
+      <div>
+        <span class="graphical azul-logo"></span>
+        <div class="textual">
+          <h3>Azul Point Calculator</h3>
+          <p>
+            A point calculator for the Azul boardgame.
+          </p>
+          <a href="https://github.com/joshua-shone/azul">GitHub</a>
+          <a href="https://joshshone.com/azul">Demo</a>
+        </div>
+      </div>
     </section>
   </body>
-  <style>
-    html {
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 1rem;
-      font-family: 'Merriweather', serif;
-      color: #8a9096;
-      padding-top: 9rem;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 0.8rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      background-color: #fff;
-      z-index: 2;
-      height: 9rem;
-    }
-    header img {
-      display: inline-block;
-      width:  5rem;
-      height: 5rem;
-      border-radius: 100%;
-      background-color: #5d5d5d;
-      margin-right: 1.5rem;
-    }
-    .top-links {
-      position: absolute;
-      right: 0.8rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .top-links a {
-      color: #8a9096;
-      font-size: 1.1rem;
-      text-align: right;
-      text-decoration: none;
-      padding: 0.5rem;
-      background-position: right 0.5rem center;
-      background-size: 1.5rem;
-      background-repeat: no-repeat;
-      padding-right: 2.4rem;
-    }
-    .top-links a:hover {
-      background-color: #525b69;
-      color: #fff;
-    }
-    .top-links .email {
-      background-image: url("assets/email-icon.svg");
-    }
-    .top-links .email:before {
-      content: 'josh.shone@gmail.com';
-    }
-    .top-links .cv {
-      background-image: url("assets/pdf-icon.svg");
-      font-weight: bold;
-    }
-    .top-links .github {
-      background-image: url("assets/github-logo.svg");
-      font-weight: bold;
-    }
-    .timeline-header-container {
-      position: sticky;
-      top: calc(9rem + (1.75rem * 2));
-      z-index: 2;
-    }
-    #timeline-header {
-      height: 1.5rem;
-      width: 100%;
-      flex-shrink: 0;
-      margin-bottom: 0.4rem;
-      position: relative;
-      background-color: #fff;
-    }
-    h1 {
-      color: #5d5d5d;
-      font-weight: normal;
-    }
-    h2 {
-      position: sticky;
-      z-index: 2;
-      margin-top: 0;
-      margin-bottom: 0;
-      height: 1.8rem;
-      color: #525b69;
-      background-color: #fff;
-      font-family: 'Volkhov', serif;
-      font-weight: normal;
-      text-align: center;
-    }
-    h2 a {
-      display: block;
-      text-decoration: none;
-      color: #525b69;
-    }
-    h2 a:hover {
-      background-color: #525b69;
-      color: #fff;
-    }
-    h2:nth-of-type(1) {
-      top: 9rem;
-    }
-    h2:nth-of-type(2) {
-      top: calc(9rem + 1.7rem);
-      bottom: 1.7rem;
-    }
-    h2:nth-of-type(3) {
-      top: calc(9rem + 1.7rem + 1.7rem);
-      bottom: 0;
-    }
-    section {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto;
-      min-height: calc(100vh - (9rem /*header*/ + (1.8rem * 3) /*H2s*/));
-    }
-    .scroll-handle {
-      position: absolute;
-    }
-    section:nth-of-type(1) .scroll-handle { top: calc(-9rem + -1.7rem); }
-    section:nth-of-type(2) .scroll-handle { top: calc(-9rem + (-1.7rem * 2) + -3rem); }
-    section:nth-of-type(3) .scroll-handle { top: calc(-9rem + (-1.7rem * 3)); }
-    section {
-      max-width: none;
-    }
-    section.two-pane:nth-of-type(1):before {
-      top: 1rem;
-    }
-    section.two-pane:before {
-      display: block;
-      content: '';
-      position: absolute;
-      left: calc(50% - 0.3rem);
-      width: 0.6rem;
-      top: 0;
-      bottom: 0;
-      background-color: #e2e6e9;
-    }
-    div.two-pane {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 1rem;
-    }
-    .left-pane {
-      flex-basis: 0;
-      flex-grow: 1;
-      margin-right: 2rem;
-      text-align: right;
-    }
-    div.two-pane .right-pane {
-      flex-basis: 0;
-      flex-grow: 1;
-      margin-left: 2rem;
-    }
-    .timeline-row {
-      flex-grow: 1;
-      flex-basis: 0;
-      position: relative;
-      height: 15px;
-    }
-    .timeline-block {
-      color: #e2e6e9;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      text-align: left;
-    }
-    #timeline-header .timeline-block {
-      margin-top: 5px;
-      padding-left: 6px;
-      font-family: 'Volkhov', serif;
-    }
-    #timeline-header .timeline-block::after {
-      display: block;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: -3px;
-      width: 3px;
-      height: 12px;
-      background-color: #e2e6e9;
-    }
-    #timeline-header .timeline-block:first-of-type {
-      background-color: #fff;
-      z-index: 1;
-    }
 
-    .timeline-block .label {
-      color: #525b69;
-      position: absolute;
-      top: 100%;
-      margin-top: 5px;
-    }
+  <script src="main.js"></script>
 
-    .timeline-block .duration {
-      position: absolute;
-      bottom: 100%;
-      padding-bottom: 5px;
-      left:  -150px;
-      right: -150px;
-      text-align: center;
-      color: #525b69;
-    }
-    .timeline-block .duration.right-aligned {
-      right: 0;
-      text-align: right;
-    }
-
-    .timeline-block .date-marker {
-      position: absolute;
-      top: 100%;
-      width: 300px;
-      padding-top: 25px;
-      text-align: center;
-      color: #525b69;
-      display: flex;
-      justify-content: center;
-    }
-    .timeline-block .date-marker:after {
-      content: '';
-      display: block;
-      width: 1px;
-      position: absolute;
-      left: 50%;
-      top: 3px;
-      height: 20px;
-      background-color: #000;
-    }
-    .timeline-block .date-marker.start { left:  -150px; }
-    .timeline-block .date-marker.end   { right: -150px; }
-
-    .timeline-block.australia {
-      background: linear-gradient(135deg, #262665, #262665 10px, #fff 10px, #fff 15px, #cf3030 15px, #cf3030 20px, #fff 20px, #fff 23px, #262665 23px, #262665);
-    }
-    .timeline-block.germany   {
-      background: linear-gradient(135deg, #000, #000 33%, #c83737 33%, #c83737 66%, #cfaf30 66%, #cfaf30);
-    }
-
-    .timeline-block.aie       { background-color: #0a2a3b; }
-    .timeline-block.nch       { background-color: #de4b4b; }
-    .timeline-block.mediaware { background-color: #274093; }
-    .timeline-block.kiwi      { background-color: #95c233; }
-    .timeline-block.das       { background-color: #fdc800; }
-
-    .timeline-paragraph-header {
-      height: 2em;
-    }
-
-    .hide-text {
-      font-size: 0;
-    }
-
-    dl > * {
-      display: inline-block;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: 2rem 2rem;
-      padding-left: 2.2rem;
-      margin: 0.5rem;
-      text-align: left;
-    }
-    dt:after {
-      content: ':';
-    }
-    dd {
-      color: #5d5d5d;
-      margin-left: 0;
-    }
-    dl .profession    { background-image: url("assets/profession-icon.svg");    }
-    dl .location      { background-image: url("assets/map-pin.svg");            }
-    dl .date-of-birth { background-image: url("assets/date-of-birth-icon.svg"); }
-
-    ul.left-pane {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    ul.left-pane {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 0;
-    }
-    ul.left-pane li {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 1.5rem;
-      color: #5d5d5d;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    ul.left-pane li img {
-      height: 2.2rem;
-    }
-
-    .certificate-list {
-      list-style-type: none;
-      padding-left: 1.5rem;
-    }
-    .certificate-list li {
-      background-image: url("assets/certificate-icon.svg");
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: 1.3rem;
-      padding-left: 2rem;
-      margin: 0.5rem;
-    }
-
-    section.projects {
-      max-width: none;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-
-    .project-card {
-      display: inline-block;
-      width:  12rem;
-      height: 12rem;
-      position: relative;
-      margin: 0.5rem;
-    }
-    .project-card:hover {
-      outline: 7px solid #5798e8;
-    }
-    .project-card img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    @media (max-width: 1023px) {
-      .top-links {
-        right: 0;
-      }
-      .top-links .email:before {
-        content: 'email';
-        font-weight: bold;
-      }
-      #timeline-header {
-        display: none;
-      }
-      .timeline-row {
-        visibility: hidden;
-      }
-      .timeline-block {
-        position: initial;
-      }
-      .timeline-row .duration {
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: initial;
-      }
-      .timeline-row .date-marker {
-        display: none;
-      }
-      div.two-pane {
-        flex-direction: column;
-      }
-      .left-pane {
-        margin-right: 0;
-        margin-bottom: 0;
-      }
-      div.two-pane .right-pane {
-        margin-left: 0;
-      }
-      section.two-pane:before {
-        display: none;
-      }
-      section {
-        max-width: 40rem;
-      }
-      dl.left-pane {
-        display: flex;
-        justify-content: space-between;
-      }
-      dl.left-pane > * {
-        margin: 0;
-      }
-      ul.left-pane {
-        justify-content: space-between;
-      }
-      ul.left-pane li {
-        margin-left: 0;
-      }
-      ul.left-pane li img {
-        height: 1.7rem;
-      }
-      p {
-        text-align: justify;
-      }
-    }
-    @media (max-width: 500px) {
-      html {
-        font-size: 3.2vw;
-      }
-    }
-  </style>
-  <script>
-    "use strict";
-
-    const now = new Date();
-
-    const birthday = new Date(1989, 8, 26);
-    const ageElement = document.getElementById('age');
-    ageElement.textContent = Math.floor((now - birthday) / 1000 / 60 / 60 / 24 / 365);
-
-    function datetimeToYearFloat(datetime) {
-      return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
-    }
-    function timeStringToYear(string) {
-      if (string === 'now') {
-        return datetimeToYearFloat(now);
-      } else {
-        const [day, month, year] = string.split('.').map(s => parseInt(s));
-        return year + ((month-1) * 1/12) + ((day-1) * 1/365);
-      }
-    }
-    function bendTime(t) {
-      return t*t*t*t;
-    }
-    const timelineStart = 1989 + ((1/12)*9) + ((1/365)*26);
-    const timelineEnd = datetimeToYearFloat(now);
-    function yearToTimelinePercentage(year) {
-      return 100 * bendTime((year - timelineStart) / (timelineEnd - timelineStart));
-    }
-    const timelineHeader = document.getElementById('timeline-header');
-    for (let year = 1989; year < now.getFullYear()+1; year++) {
-      timelineHeader.insertAdjacentHTML('beforeend', `<span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}">${year}</span>`);
-    }
-    for (let block of document.getElementsByClassName('timeline-block')) {
-      const startYear = timeStringToYear(block.dataset.start);
-      const endYear   = timeStringToYear(block.dataset.end);
-      block.style.left = yearToTimelinePercentage(startYear) + '%';
-      if (startYear > 1989) {
-        block.style.width = (yearToTimelinePercentage(endYear) - yearToTimelinePercentage(startYear)) + '%';
-      }
-      if (!block.closest('#timeline-header') && !block.hasAttribute('nomarkers')) {
-        const durationText = document.createElement('div');
-        durationText.classList.add('duration');
-        durationText.classList.toggle('right-aligned', block.dataset.end === 'now');
-        const duration = endYear - startYear;
-        const years = Math.floor(duration);
-        const months = Math.round((duration%1) * 12);
-        if (duration < 1) {
-          durationText.textContent = `${months} month${months>=2 ? 's' : ''}`;
-        } else if (months > 0) {
-          durationText.textContent = `${years} year${years>=2?'s':''}, ${months} month${months>=2 ? 's' : ''}`;
-        } else {
-          durationText.textContent = `${years} year${years>=2?'s':''}`;
-        }
-        block.appendChild(durationText);
-        block.insertAdjacentHTML('beforeend', `<div class="date-marker start"><span>${block.dataset.start}</span></div>`);
-        if (block.dataset.end !== 'now') {
-          block.insertAdjacentHTML('beforeend', `<div class="date-marker end">  <span>${block.dataset.end}  </span></div>`);
-        }
-      }
-    }
-    function getTimelineBlockWidthPx(block) {
-      return (window.innerWidth / 2) * (parseFloat(block.style.width) / 100);
-    }
-    function adjustTimelineForWindowResize() {
-      for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
-        block.classList.toggle('hide-text', (block.textContent !== '1989') && (getTimelineBlockWidthPx(block) < 42));
-      }
-      for (let block of document.getElementsByClassName('timeline-block')) {
-        const startMarker = block.querySelector('.date-marker.start span');
-        const endMarker   = block.querySelector('.date-marker.end span');
-        if (startMarker && endMarker) {
-          const blockWidth = getTimelineBlockWidthPx(block);
-          const markerWidth = 86;
-          const distanceBetweenMarkers = blockWidth - markerWidth;
-          if (distanceBetweenMarkers < 15) {
-            startMarker.style.marginRight = (15 - distanceBetweenMarkers) + 'px';
-            endMarker.style.marginLeft    = (15 - distanceBetweenMarkers) + 'px';
-          }
-        }
-      }
-    }
-    adjustTimelineForWindowResize();
-    window.onresize = adjustTimelineForWindowResize;
-  </script>
 </html>
