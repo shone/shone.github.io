@@ -2,10 +2,6 @@
 
 const now = new Date();
 
-const birthday = new Date(1989, 8, 26);
-const ageElement = document.getElementById('age');
-ageElement.textContent = Math.floor((now - birthday) / 1000 / 60 / 60 / 24 / 365);
-
 function datetimeToYearFloat(datetime) {
   return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
 }

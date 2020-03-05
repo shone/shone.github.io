@@ -16,22 +16,24 @@
 
   <body>
 
-    <h1>
-      <img src="assets/profile_pic.jpg" srcset="assets/profile_pic_256x256.jpg 256w, assets/profile_pic_512x512.jpg 512w" alt="Josh Shone">
-    </h1>
-
     <section>
+      <div>
+        <div class="textual">
+          <h1>
+            <img src="assets/profile_pic.jpg" srcset="assets/profile_pic_256x256.jpg 256w, assets/profile_pic_512x512.jpg 512w" alt="Josh Shone">
+          </h1>
+        </div>
+      </div>
       <div>
         <ul class="graphical">
           <li class="profession">Software Developer</li>
           <li class="location">Berlin</li>
-          <li class="date-of-birth">1989 (age&nbsp;<span id="age">30</span>)</li>
         </ul>
         <div class="textual">
           <p>
-            Hi, I'm Josh Shone - a software developer living in Berlin, originally from
+            <em>Hi, I'm Josh Shone - a software developer living in Berlin, originally from
             Canberra, Australia. I love technology and have a special interest in human -
-            machine interaction. Sport and the outdoors keep me sane.
+            machine interaction. Sport and the outdoors keep me sane.</em>
           </p>
           <a class="email"  href="mailto:josh.shone@gmail.com">email</a>
           <a class="cv"     href="cv/cv.pdf">CV</a>
@@ -68,18 +70,11 @@
       </div>
     </section>
 
-    <h2><a href="#history">History</a></h2>
-    <span id="timeline-header"></span>
     <section id="history-section">
-      <span id="history" class="scroll-handle"></span>
+      <h2><a href="#history">History</a></h2>
       <div>
         <span class="graphical timeline-row">
-          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015" nomarkers>
-            <div class="label">Australia</div>
-          </span>
-          <span class="timeline-block germany" data-start="24.08.2015" data-end="now" nomarkers>
-            <div class="label">Berlin</div>
-          </span>
+          <span id="timeline-header"></span>
         </span>
         <p class="textual">
           I have worked for several companies as a software developer, both in Australia as
@@ -183,13 +178,11 @@
       </div>
     </section>
 
-    <h2><a href="#projects">Projects</a></h2>
     <section>
-      <span id="projects" class="scroll-handle"></span>
+      <h2><a href="#projects">Projects</a></h2>
       <div>
-        <span class="graphical yarnball-logo"></span>
         <div class="textual">
-          <h3>Yarnball</h3>
+          <h3 class="yarnball-logo">Yarnball</h3>
           <p>
             An experimental graph editor concept.
           </p>
@@ -198,9 +191,8 @@
         </div>
       </div>
       <div>
-        <span class="graphical phone-party-logo"></span>
         <div class="textual">
-          <h3>Phone Party</h3>
+          <h3 class="phone-party-logo">Phone Party</h3>
           <p>
             A framework for multiplayer party games.
           </p>
@@ -208,9 +200,8 @@
         </div>
       </div>
       <div>
-        <span class="graphical piano-logo"></span>
         <div class="textual">
-          <h3>Piano</h3>
+          <h3 class="piano-logo">Piano</h3>
           <p>
             A simple multi-touch piano app.
           </p>
@@ -219,9 +210,8 @@
         </div>
       </div>
       <div>
-        <span class="graphical azul-logo"></span>
         <div class="textual">
-          <h3>Azul Point Calculator</h3>
+          <h3 class="azul-logo">Azul Point Calculator</h3>
           <p>
             A point calculator for the Azul boardgame.
           </p>
