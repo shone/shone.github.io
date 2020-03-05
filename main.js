@@ -67,19 +67,18 @@ for (let block of document.getElementsByClassName('timeline-block')) {
     }
   }
 }
-function getTimelineBlockWidthPx(block) {
-  return (window.innerWidth / 2) * (parseFloat(block.style.width) / 100);
-}
+
 function adjustTimelineForWindowSize() {
+  const yearLabelWidthPx = 50;
   for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
-    block.classList.toggle('hide-text', (block.textContent !== '1989') && (getTimelineBlockWidthPx(block) < 50));
+    block.classList.toggle('hide-text', (block.textContent.trim() !== '1989') && (block.getBoundingClientRect().width < yearLabelWidthPx));
   }
   for (let block of document.getElementsByClassName('timeline-block')) {
     const startMarker = block.querySelector('.date-marker.start span');
     const endMarker   = block.querySelector('.date-marker.end span');
     if (startMarker && endMarker) {
-      const blockWidth = getTimelineBlockWidthPx(block);
-      const markerWidth = 96;
+      const blockWidth = block.getBoundingClientRect().width;
+      const markerWidth = startMarker.getBoundingClientRect().width;
       const distanceBetweenMarkers = blockWidth - markerWidth;
       if (distanceBetweenMarkers < 15) {
         startMarker.style.marginRight = (15 - distanceBetweenMarkers) + 'px';

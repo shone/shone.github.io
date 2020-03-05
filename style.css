@@ -26,8 +26,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color: var(--base01) transparent;
+}
 html::-webkit-scrollbar {
   width: 16px;
+  background: transparent;
 }
 html::-webkit-scrollbar-thumb {
   background: var(--base01);
@@ -56,7 +62,7 @@ body::after {
   left:   0;
   right:  0;
   height: 9rem;
-  background: linear-gradient(transparent, var(--base03) 60%);
+  background: linear-gradient(rgba(0, 43, 54, 0), var(--base03) 60%);
   pointer-events: none;
 }
 
@@ -72,7 +78,7 @@ h1 {
   right: 0;
   height: var(--h1-height);
   margin: 0;
-  background: linear-gradient(var(--base03) 40%, transparent);
+  background: linear-gradient(var(--base03) 40%, rgba(0, 43, 54, 0));
   text-align: center;
   z-index: 3;
   pointer-events: none;
@@ -188,6 +194,9 @@ a:hover {
 }
 #history-section > div:first-of-type > .graphical {
   margin-top: 1.6rem;
+}
+#history-section h3 {
+  margin: 0;
 }
 .timeline-row {
   flex-grow: 1;
@@ -312,14 +321,9 @@ ul.graphical li img {
 
 .certificate-list {
   list-style-type: none;
-  padding-left: 1.5rem;
+  padding-left: 0;
 }
 .certificate-list li {
-  background-image: url("assets/certificate-icon.svg");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: 1.3rem;
-  padding-left: 2rem;
   margin: 0.5rem;
 }
 
