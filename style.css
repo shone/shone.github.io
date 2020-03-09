@@ -81,6 +81,7 @@ h1 {
   margin: 0;
   background: linear-gradient(var(--base03) 20%, rgba(0, 43, 54, 0));
   text-align: center;
+  font-size: 0;
   z-index: 3;
   pointer-events: none;
   animation: 1.6s fade-in;
@@ -102,6 +103,13 @@ h1 a:focus {
   box-shadow: none;
   border-radius: 50%;
 }
+h1 a:active {
+  transform: none;
+}
+h1 a:active img,
+h1 a:active::after {
+  transform: translate(0.1rem, 0.1rem);
+}
 h1 img {
   display: inline-block;
   width:  6rem;
@@ -111,6 +119,10 @@ h1 img {
   transition: width 0.2s, height 0.2s, margin-top 0.2s;
   animation: 0.7s reveal-profile-pic forwards;
   cursor: pointer;
+  pointer-events: none;
+}
+h1 a::after {
+  pointer-events: none;
 }
 h1 a:hover img {
   box-shadow: 0.1rem 0.2rem 0.6rem rgba(0, 0, 0, 0.8);
@@ -537,6 +549,21 @@ ul.graphical li img {
     margin-top: -0.5rem;
   }
   h1.collapsed img {
+    width:  3rem;
+    height: 3rem;
+  }
+  h1 a::after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 3rem);
+    top: 1rem;
+    width:  6rem;
+    height: 6rem;
+    transition: width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+  }
+  h1.collapsed a::after {
+    left: calc(50% - 1.5rem);
+    top: 0.5rem;
     width:  3rem;
     height: 3rem;
   }
