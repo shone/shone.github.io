@@ -17,18 +17,20 @@
   <body>
 
     <h1>
-      <img src="assets/profile_pic.jpg" srcset="assets/profile_pic_256x256.jpg 256w, assets/profile_pic_512x512.jpg 512w" alt="Josh Shone">
+      <a href="#about">
+        <img src="assets/profile_pic.jpg" srcset="assets/profile_pic_256x256.jpg 256w, assets/profile_pic_384x384.jpg 384w, assets/profile_pic_512x512.jpg 512w" alt="Josh Shone">
+      </a>
     </h1>
 
     <section>
+      <span id="about" class="scroll-handle"></span>
       <div>
         <ul class="graphical">
-          <li class="profession">Software Developer</li>
+          <li class="profession">Fullstack Developer</li>
           <li class="location">Berlin</li>
-          <li class="date-of-birth">1989 (age&nbsp;<span id="age">30</span>)</li>
         </ul>
         <div class="textual">
-          <p>
+          <p class="opening-paragraph">
             Hi, I'm Josh Shone - a software developer living in Berlin, originally from
             Canberra, Australia. I love technology and have a special interest in human -
             machine interaction. Sport and the outdoors keep me sane.
@@ -68,121 +70,6 @@
       </div>
     </section>
 
-    <h2><a href="#history">History</a></h2>
-    <span id="timeline-header"></span>
-    <section id="history-section">
-      <span id="history" class="scroll-handle"></span>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015" nomarkers>
-            <div class="label">Australia</div>
-          </span>
-          <span class="timeline-block germany" data-start="24.08.2015" data-end="now" nomarkers>
-            <div class="label">Berlin</div>
-          </span>
-        </span>
-        <p class="textual">
-          I have worked for several companies as a software developer, both in Australia as
-          well as Germany. My knowledge and expertise is full-stack, covering backend systems to
-          user-interface design. I have a special interest in user-interaction.
-        </p>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block flowkey" data-start="22.10.2019" data-end="now"></span>
-        </span>
-        <span class="textual">
-          <h3 class="flowkey-logo" title="flowkey"></h3>
-          <p>
-            I worked briefly at flowkey GmbH, completing several projects for their piano learning web-app such as the implementation of their 'Netflix' style
-            redesign and a specialized layout algorithm for note name internationalization.
-          </p>
-        </span>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block das" data-start="01.01.2019" data-end="now"></span>
-        </span>
-        <span class="textual">
-          <h3 class="das-logo" title="DAS"></h3>
-          <p>
-            At the Deutsche Akademie für Sprachen I studied German language full-time, continuing until B1 level.
-          </p>
-        </span>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block kiwi" data-start="01.06.2016" data-end="07.12.2018"></span>
-        </span>
-        <span class="textual">
-          <h3 class="kiwi-logo" title="KIWI.KI GmbH"></h3>
-          <p>
-            At KIWI I developed and released an overhauled version of their web-based <a href="https://portal.kiwi.ki/">portal</a> for housing
-            companies, covering back-end work (Python, Flask), database refactoring (PostgreSQL),
-            front-end design and implementation (ES6 Javascript, Backbone, Foundation CSS), build
-            system re-tooling (NodeJS, Gulp), and deployment (Kubernetes).
-          </p>
-          <p>
-            My work at KIWI was often truely full-stack, with tasks requiring me to flash hardware
-            to test new firmware, delve into dense SQL queries, all the way up to UI-design and
-            user-experience considerations; even some graphic-design.
-          </p>
-        </span>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015"></span>
-        </span>
-        <span class="textual">
-          <h3 class="mediaware-logo" title="Mediaware"></h3>
-          <p>
-            My initial role at Mediaware was as a C++ developer engaged in performance analysis, debugging and feature development on a large codebase.
-            It was a mid-sized Agile team adhering to well-defined processes for issue-tracking, continuous integration, customer
-            feedback and development iterations.
-          </p>
-          <p>
-            I helped develop the company's flagship product InStream, a high-performance multi-threaded video processing service for
-            broadcast television. Also engaged in R&D, producing working prototypes for new products - one of which went on to be
-            used by Australian firefighting services.
-          </p>
-        </span>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block nch" data-start="05.01.2009" data-end="23.08.2012"></span>
-        </span>
-        <span class="textual">
-          <h3 class="nch-logo" title="NCH Software"></h3>
-          <p>
-            Was responsible for creating several native desktop applications from scratch, including a non-destructive photo editor and
-            musical notation software. Initial concept, design, mockups, prototyping, development and release was handled either solo
-            or in small teams. Highlights:
-          </p>
-          <ul>
-            <li>Designed a unique modeless editing UI for sheet music.</li>
-            <li>Implemented a dynamic level-of-detail system for smoothly scaling fast fourier transform visualizations.</li>
-            <li>Developed a high-performance non-destructive image transformation and layering system.</li>
-          </ul>
-        </span>
-      </div>
-      <div>
-        <span class="graphical timeline-row">
-          <span class="timeline-block aie" data-start="01.01.2008" data-end="01.12.2008"></span>
-        </span>
-        <span class="textual">
-          <h3 class="aie-logo" title="AIE"></h3>
-          <p>
-            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++)
-            as well as 3D art/modelling. Some of the software covered was Unreal Engine and 3ds Max.
-          </p>
-          <ul class="certificate-list">
-            <li>Advanced Diploma of Professional Game Development</li>
-            <li>Cert IV in 3D Animation for Games and Film</li>
-          </ul>
-        </span>
-      </div>
-    </section>
-
     <h2><a href="#projects">Projects</a></h2>
     <section>
       <span id="projects" class="scroll-handle"></span>
@@ -202,7 +89,7 @@
         <div class="textual">
           <h3>Phone Party</h3>
           <p>
-            A framework for multiplayer party games.
+            A framework for multiplayer party games. It has a server written in Go which uses websockets to broker WebRTC connections between web browsers.
           </p>
           <a href="https://github.com/joshua-shone/phone-party">GitHub</a>
         </div>
@@ -212,7 +99,7 @@
         <div class="textual">
           <h3>Piano</h3>
           <p>
-            A simple multi-touch piano app.
+            A simple multi-touch keyboard for demonstrating progressive web app features.
           </p>
           <a href="https://github.com/joshua-shone/piano">GitHub</a>
           <a href="https://joshshone.com/piano">Demo</a>
@@ -228,6 +115,118 @@
           <a href="https://github.com/joshua-shone/azul">GitHub</a>
           <a href="https://joshshone.com/azul">Demo</a>
         </div>
+      </div>
+    </section>
+
+    <h2><a href="#history">History</a></h2>
+    <span id="timeline-header"></span>
+    <section id="history-section">
+      <span id="history" class="scroll-handle"></span>
+      <div id="timeline-background"></div>
+      <div>
+        <span class="graphical timeline-row">
+<!--           <span class="timeline-block australia" data-start="26.09.1989" data-end="01.06.2015"> </span> -->
+<!--           <span class="timeline-block germany"   data-start="24.08.2015" data-end="now"       > </span> -->
+        </span>
+        <p class="textual">
+          I have worked for several companies as a software developer, both in Australia as
+          well as Germany. My knowledge and expertise is full-stack, covering backend systems to
+          user-interface design. I have a special interest in user-interaction.
+        </p>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block flowkey" data-start="22.10.2019" data-end="01.03.2020" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="flowkey-logo" title="flowkey"></h3>
+          <p>
+            I worked briefly at flowkey GmbH, completing several projects for their piano learning web-app such as the implementation of their 'Netflix' style
+            redesign and a specialized layout algorithm for note name internationalization.
+          </p>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block das" data-start="01.01.2019" data-end="24.09.2019" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="das-logo" title="DAS"></h3>
+          <p>
+            At the Deutsche Akademie für Sprachen I studied German language full-time, continuing until B1 level.
+          </p>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block kiwi" data-start="01.06.2016" data-end="07.12.2018" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="kiwi-logo" title="KIWI.KI GmbH"></h3>
+          <p>
+            At KIWI I developed and released an overhauled version of their web-based <a href="https://portal.kiwi.ki/">portal</a> for housing
+            companies, covering back-end work (Python, Flask), database refactoring (PostgreSQL),
+            front-end design and implementation (ES6 Javascript, Backbone, Foundation CSS), build
+            system re-tooling (NodeJS, Gulp), and deployment (Kubernetes).
+          </p>
+          <p>
+            My work at KIWI was often truely full-stack, with tasks requiring me to flash hardware
+            to test new firmware, delve into dense SQL queries, all the way up to UI-design and
+            user-experience considerations; even some graphic-design.
+          </p>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block mediaware" data-start="24.09.2012" data-end="08.12.2015" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="mediaware-logo" title="Mediaware"></h3>
+          <p>
+            My initial role at <a href="https://gdmissionsystems.com/about-us/international/australia/mediaware">Mediaware</a> was as a C++ developer engaged in performance analysis, debugging and feature development on a large codebase.
+            It was a mid-sized Agile team adhering to well-defined processes for issue-tracking, continuous integration, customer
+            feedback and development iterations.
+          </p>
+          <p>
+            I helped develop the company's flagship product InStream, a high-performance multi-threaded video processing service for
+            broadcast television. Also engaged in R&D, producing working prototypes for new products - one of which went on to be
+            used by Australian firefighting services.
+          </p>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block nch" data-start="05.01.2009" data-end="23.08.2012" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="nch-logo" title="NCH Software"></h3>
+          <p>
+            At <a href="https://www.nchsoftware.com/">NCH Software</a> I was responsible for creating several native desktop applications from scratch, including a non-destructive photo editor and
+            musical notation software. Initial concept, design, mockups, prototyping, development and release was handled either solo
+            or in small teams. Highlights:
+          </p>
+          <ul>
+            <li>Designed a unique modeless editing UI for sheet music.</li>
+            <li>Implemented a dynamic level-of-detail system for smoothly scaling fast fourier transform visualizations.</li>
+            <li>Developed a high-performance non-destructive image transformation and layering system.</li>
+          </ul>
+        </span>
+      </div>
+      <div>
+        <span class="graphical timeline-row">
+          <span class="timeline-block aie" data-start="01.01.2008" data-end="01.12.2008" show-labels></span>
+        </span>
+        <span class="textual">
+          <h3 class="aie-logo" title="AIE"></h3>
+          <p>
+            At the Academy for Interactive Entertainment in Canberra I studied both graphics programming (C++)
+            as well as 3D art/modelling. Some of the software covered was Unreal Engine and 3ds Max.
+          </p>
+          <ul class="certificate-list">
+            <li>Advanced Diploma of Professional Game Development</li>
+            <li>Cert IV in 3D Animation for Games and Film</li>
+          </ul>
+        </span>
       </div>
     </section>
   </body>

@@ -2,10 +2,6 @@
 
 const now = new Date();
 
-const birthday = new Date(1989, 8, 26);
-const ageElement = document.getElementById('age');
-ageElement.textContent = Math.floor((now - birthday) / 1000 / 60 / 60 / 24 / 365);
-
 function datetimeToYearFloat(datetime) {
   return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
 }
@@ -28,23 +24,27 @@ function yearToTimelinePercentage(year) {
   return 100 * bendTime((year - timelineStart) / (timelineEnd - timelineStart));
 }
 
-const timelineHeader = document.getElementById('timeline-header');
+const timelineHeader     = document.getElementById('timeline-header');
+const timelineBackground = document.getElementById('timeline-background');
 for (let year = 1989; year < now.getFullYear()+1; year++) {
   timelineHeader.insertAdjacentHTML('beforeend', `
     <span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}">
       ${year < now.getFullYear() ? year : ''}
     </span>
   `);
+  timelineBackground.insertAdjacentHTML('beforeend', `
+    <span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}"></span>
+  `);
 }
 
-for (let block of document.getElementsByClassName('timeline-block')) {
+for (const block of document.getElementsByClassName('timeline-block')) {
   const startYear = timeStringToYear(block.dataset.start);
   const endYear   = timeStringToYear(block.dataset.end);
   block.style.left = yearToTimelinePercentage(startYear) + '%';
   if (startYear > 1989) {
     block.style.width = (yearToTimelinePercentage(endYear) - yearToTimelinePercentage(startYear)) + '%';
   }
-  if (!block.closest('#timeline-header') && !block.hasAttribute('nomarkers')) {
+  if (block.hasAttribute('show-labels')) {
     const durationText = document.createElement('div');
     durationText.classList.add('duration');
     durationText.classList.toggle('right-aligned', block.dataset.end === 'now');
@@ -70,10 +70,10 @@ for (let block of document.getElementsByClassName('timeline-block')) {
 
 function adjustTimelineForWindowSize() {
   const yearLabelWidthPx = 50;
-  for (let block of timelineHeader.getElementsByClassName('timeline-block')) {
+  for (const block of timelineHeader.getElementsByClassName('timeline-block')) {
     block.classList.toggle('hide-text', (block.textContent.trim() !== '1989') && (block.getBoundingClientRect().width < yearLabelWidthPx));
   }
-  for (let block of document.getElementsByClassName('timeline-block')) {
+  for (const block of document.getElementsByClassName('timeline-block')) {
     const startMarker = block.querySelector('.date-marker.start span');
     const endMarker   = block.querySelector('.date-marker.end span');
     if (startMarker && endMarker) {
@@ -89,3 +89,15 @@ function adjustTimelineForWindowSize() {
 }
 adjustTimelineForWindowSize();
 window.onresize = adjustTimelineForWindowSize;
+
+document.querySelector('h1 a').onclick = () => {
+  if (!document.querySelector('h1').classList.contains('collapsed')) {
+    location.reload()
+  }
+}
+
+const h1Element = document.querySelector('h1');
+function updateH1CollapsedState() {
+  h1Element.classList.toggle('collapsed', document.documentElement.scrollTop > 30);
+}
+window.addEventListener('scroll', updateH1CollapsedState, {passive: true});

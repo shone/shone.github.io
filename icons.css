@@ -1,3 +1,12 @@
+@media (min-width: 1024px) and (max-width: 1899px) {
+  h1.collapsed img {
+    content: url('data:image/svg+xml;utf8,<svg width="64" height="64" viewBox="0 0 16.93 16.93" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -280.1)"><circle cx="8.48" cy="288.6" r="8.46"/><path d="M5.85 295.1v-4.52l-1.22-2.1.83-2.29 6.04-1.24 1.6 1.87-.99 3.7-2.7.72v4.28z" fill="%23cea38e"/></g></svg>');
+  }
+  h1.collapsed a:hover img {
+    content: url('data:image/svg+xml;utf8,<svg width="64" height="64" viewBox="0 0 16.93 16.93" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 -280.1)"><circle cx="8.48" cy="288.6" r="8.46" fill="white"/><path d="M5.85 295.1v-4.52l-1.22-2.1.83-2.29 6.04-1.24 1.6 1.87-.99 3.7-2.7.72v4.28z" fill="%23002b36"/></g></svg>');
+  }
+}
+
 .python-logo {
   width:  2rem;
   height: 2rem;
