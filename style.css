@@ -427,24 +427,6 @@ ul.graphical li img {
   margin: 0.5rem;
 }
 
-.project-card {
-  display: inline-block;
-  width:  12rem;
-  height: 12rem;
-  position: relative;
-  margin: 0.5rem;
-}
-.project-card:hover {
-  outline: 7px solid #5798e8;
-}
-.project-card img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* Ultra-wide desktop layout */
 @media (min-width: 2200px) {
   body {
@@ -641,6 +623,19 @@ ul.graphical li img {
   }
   .timeline-row .date-marker {
     display: none;
+  }
+
+  #projects-section > div {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  #projects-section > div > .graphical {
+    display: inline-block;
+    float: left;
+    width:  2.5rem;
+    height: 2.5rem;
+    margin-right: 0.8rem;
+    margin-top: -0.6rem;
   }
 }
 
