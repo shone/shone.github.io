@@ -98,6 +98,6 @@ document.querySelector('h1 a').onclick = () => {
 
 const h1Element = document.querySelector('h1');
 function updateH1CollapsedState() {
-  h1Element.classList.toggle('collapsed', document.documentElement.scrollTop > 30);
+  h1Element.classList.toggle('collapsed', (document.documentElement.scrollTop || document.body.scrollTop) > 30);
 }
 window.addEventListener('scroll', updateH1CollapsedState, {passive: true});
