@@ -226,13 +226,13 @@ section:nth-of-type(3) > div:nth-of-type(7) { animation-delay: 1.8s; }
 section:nth-of-type(3) > div:nth-of-type(8) { animation-delay: 1.9s; }
 
 section > div > .graphical {
-  flex-basis: 1rem;
+  flex-basis: 3rem;
   flex-grow: 1;
   margin-right: 2rem;
   text-align: right;
 }
 section > div .textual {
-  flex-basis: 1rem;
+  flex-basis: 3rem;
   flex-grow: 1;
   margin-left: 2rem;
 }
@@ -286,9 +286,6 @@ a:active {
   border-left: 3px solid var(--base03);
 }
 
-#history-section {
-  margin-top: -1rem;
-}
 #history-section > div:first-of-type > .textual {
   margin-top: 0;
 }
@@ -508,6 +505,10 @@ ul.graphical li img {
     animation: 0.3s fade-in forwards;
     animation-delay: 0.6s;
   }
+
+  #history-section {
+    margin-top: -1rem;
+  }
   #timeline-header {
     margin-left: 0;
     top: calc(var(--h2-height) + 1rem);
@@ -552,6 +553,10 @@ ul.graphical li img {
 
   section > div {
     flex-direction: row;
+  }
+
+  #history-section {
+    margin-top: -1rem;
   }
 }
 
@@ -605,6 +610,9 @@ ul.graphical li img {
     text-align: justify;
   }
 
+  #history-section > div > .graphical {
+    margin-bottom: -3.5rem;
+  }
   #timeline-header, #timeline-background {
     display: none;
   }
