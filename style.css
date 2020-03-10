@@ -133,6 +133,7 @@ h1 a:active img {
 
 h2 {
   position: sticky;
+  position: -webkit-sticky;
   top: var(--h1-collapsed-height);
   z-index: 3;
   margin-top: 0;
@@ -263,6 +264,7 @@ a:active {
 #timeline-header {
   display: inline-block;
   position: sticky;
+  position: -webkit-sticky;
   top: calc(var(--h1-collapsed-height) + var(--h2-height) + 0.5rem);
   z-index: 3;
   height: 1rem;
