@@ -1,29 +1,23 @@
 "use strict";
 
-const now = new Date();
-
-function datetimeToYearFloat(datetime) {
-  return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
+// Setup header
+const h1Element = document.querySelector('h1');
+function updateH1CollapsedState() {
+  h1Element.classList.toggle('collapsed', (document.documentElement.scrollTop || document.body.scrollTop) > 30);
 }
-function timeStringToYear(string) {
-  if (string === 'now') {
-    return datetimeToYearFloat(now);
-  } else {
-    const [day, month, year] = string.split('.').map(s => parseInt(s));
-    return year + ((month-1) * 1/12) + ((day-1) * 1/365);
+updateH1CollapsedState();
+window.addEventListener('scroll', updateH1CollapsedState, {passive: true});
+h1Element.onclick = () => {
+  if (!document.querySelector('h1').classList.contains('collapsed')) {
+    location.reload();
   }
 }
-function bendTime(t) {
-  return t*t*t*t;
-}
 
+const now = new Date();
 const timelineStart = 1989 + ((1/12)*9) + ((1/365)*26);
 const timelineEnd = datetimeToYearFloat(now);
 
-function yearToTimelinePercentage(year) {
-  return 100 * bendTime((year - timelineStart) / (timelineEnd - timelineStart));
-}
-
+// Setup timeline header/background
 const timelineHeader     = document.getElementById('timeline-header');
 const timelineBackground = document.getElementById('timeline-background');
 for (let year = 1989; year < now.getFullYear()+1; year++) {
@@ -37,13 +31,18 @@ for (let year = 1989; year < now.getFullYear()+1; year++) {
   `);
 }
 
+// Setup timeline blocks
 for (const block of document.getElementsByClassName('timeline-block')) {
   const startYear = timeStringToYear(block.dataset.start);
   const endYear   = timeStringToYear(block.dataset.end);
+
+  // Set position
   block.style.left = yearToTimelinePercentage(startYear) + '%';
   if (startYear > 1989) {
     block.style.width = (yearToTimelinePercentage(endYear) - yearToTimelinePercentage(startYear)) + '%';
   }
+
+  // Set label
   if (block.hasAttribute('show-labels')) {
     const durationText = document.createElement('div');
     durationText.classList.add('duration');
@@ -60,44 +59,54 @@ for (const block of document.getElementsByClassName('timeline-block')) {
     }
     block.appendChild(durationText);
     const startDisplayText = block.dataset.start.split('.').slice(0, 2).join('.');
-    block.insertAdjacentHTML('beforeend', `<div class="date-marker start"> <span>${startDisplayText}</span> </div>`);
+    block.insertAdjacentHTML('beforeend', `<div class="date-label start"> <span>${startDisplayText}</span> </div>`);
     if (block.dataset.end !== 'now') {
       const endDisplayText = block.dataset.end.split('.').slice(0, 2).join('.');
-      block.insertAdjacentHTML('beforeend', `<div class="date-marker end"> <span>${endDisplayText}</span> </div>`);
+      block.insertAdjacentHTML('beforeend', `<div class="date-label end"> <span>${endDisplayText}</span> </div>`);
     }
   }
 }
 
+function datetimeToYearFloat(datetime) {
+  return datetime.getFullYear() + ((1/12)*datetime.getMonth()) + ((1/365)*datetime.getDay());
+}
+function timeStringToYear(string) {
+  if (string === 'now') {
+    return datetimeToYearFloat(now);
+  } else {
+    const [day, month, year] = string.split('.').map(s => parseInt(s));
+    return year + ((month-1) * 1/12) + ((day-1) * 1/365);
+  }
+}
+
+function yearToTimelinePercentage(year) {
+  const ratio = (year - timelineStart) / (timelineEnd - timelineStart);
+  const ratioWithPowerCurve = ratio*ratio*ratio*ratio; // So that recent events are given more space
+  return ratioWithPowerCurve * 100;
+}
+
 function adjustTimelineForWindowSize() {
+  // Hide/show each timeline header label depending if there's enough space
   const yearLabelWidthPx = 50;
   for (const block of timelineHeader.getElementsByClassName('timeline-block')) {
     block.classList.toggle('hide-text', (block.textContent.trim() !== '1989') && (block.getBoundingClientRect().width < yearLabelWidthPx));
   }
+
+  // Move start/end labels to ensure they don't overlap
+  const minLabelMargin = 15;
   for (const block of document.getElementsByClassName('timeline-block')) {
-    const startMarker = block.querySelector('.date-marker.start span');
-    const endMarker   = block.querySelector('.date-marker.end span');
-    if (startMarker && endMarker) {
+    const startLabel = block.querySelector('.date-label.start span');
+    const endLabel   = block.querySelector('.date-label.end span');
+    if (startLabel && endLabel) {
       const blockWidth = block.getBoundingClientRect().width;
-      const markerWidth = startMarker.getBoundingClientRect().width;
-      const distanceBetweenMarkers = blockWidth - markerWidth;
-      if (distanceBetweenMarkers < 15) {
-        startMarker.style.marginRight = (15 - distanceBetweenMarkers) + 'px';
-        endMarker.style.marginLeft    = (15 - distanceBetweenMarkers) + 'px';
+      const labelWidth = startLabel.getBoundingClientRect().width;
+      const distanceBetweenLabels = blockWidth - labelWidth;
+      if (distanceBetweenLabels < minLabelMargin) {
+        startLabel.style.marginRight = (minLabelMargin - distanceBetweenLabels) + 'px';
+        endLabel.style.marginLeft    = (minLabelMargin - distanceBetweenLabels) + 'px';
       }
     }
   }
 }
 adjustTimelineForWindowSize();
 window.onresize = adjustTimelineForWindowSize;
-
-document.querySelector('h1 a').onclick = () => {
-  if (!document.querySelector('h1').classList.contains('collapsed')) {
-    location.reload()
-  }
-}
-
-const h1Element = document.querySelector('h1');
-function updateH1CollapsedState() {
-  h1Element.classList.toggle('collapsed', (document.documentElement.scrollTop || document.body.scrollTop) > 30);
-}
-window.addEventListener('scroll', updateH1CollapsedState, {passive: true});

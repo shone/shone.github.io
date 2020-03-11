@@ -350,7 +350,7 @@ a:active {
   text-align: right;
 }
 
-.timeline-block .date-marker {
+.timeline-block .date-label {
   position: absolute;
   top: 100%;
   width: 300px;
@@ -359,7 +359,7 @@ a:active {
   display: flex;
   justify-content: center;
 }
-.timeline-block .date-marker::after {
+.timeline-block .date-label::after {
   content: '';
   display: block;
   width: 1px;
@@ -369,8 +369,8 @@ a:active {
   height: 15px;
   background-color: var(--base0);
 }
-.timeline-block .date-marker.start { left:  -150px; }
-.timeline-block .date-marker.end   { right: -150px; }
+.timeline-block .date-label.start { left:  -150px; }
+.timeline-block .date-label.end   { right: -150px; }
 
 .timeline-block.australia {
   background: linear-gradient(135deg, #262665, #262665 10px, #fff 10px, #fff 15px, #cf3030 15px, #cf3030 20px, #fff 20px, #fff 23px, #262665 23px, #262665);
@@ -631,7 +631,7 @@ ul.graphical li img {
     right: 0;
     left: initial;
   }
-  .timeline-row .date-marker {
+  .timeline-row .date-label {
     display: none;
   }
 
