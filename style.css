@@ -420,12 +420,16 @@ ul.graphical li img {
   height: 2.2rem;
 }
 
-.certificate-list {
+.textual ul {
+  padding-left: 1.2rem;
+}
+.textual ul li {
+  margin-bottom: 0.5rem;
+}
+
+.textual .certificate-list {
   list-style-type: none;
   padding-left: 0;
-}
-.certificate-list li {
-  margin: 0.5rem;
 }
 
 /* Ultra-wide desktop layout */
