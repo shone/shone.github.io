@@ -22,14 +22,14 @@ html {
   color: var(--base0);
   font-family: monospace;
   font-size: 19px;
-
-  scroll-behavior: smooth;
 }
 
+/* Scrolling */
 html {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-color: var(--base01) transparent;
+  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
   width: 16px;
@@ -56,6 +56,8 @@ body {
 
   --section-max-width: 45rem;
 }
+
+/* Gradient fade-out at bottom of screen */
 body::after {
   content: '';
   position: fixed;
@@ -81,14 +83,10 @@ h1 {
   margin: 0;
   background: linear-gradient(var(--base03) 20%, rgba(0, 43, 54, 0));
   text-align: center;
-  font-size: 0;
+  font-size: 0; /* The h1 element has text for SEO but the profile pic is shown instead */
   z-index: 3;
   pointer-events: none;
   animation: 1.6s fade-in;
-}
-@keyframes reveal-profile-pic {
-  from {transform: scale(0.7);}
-  to   {transform: scale(1);}
 }
 h1 a {
   width:  8rem;
@@ -120,6 +118,10 @@ h1 img {
   animation: 0.7s reveal-profile-pic forwards;
   cursor: pointer;
   pointer-events: none;
+}
+@keyframes reveal-profile-pic {
+  from {transform: scale(0.7);}
+  to   {transform: scale(1);}
 }
 h1 a::after {
   pointer-events: none;
@@ -270,7 +272,7 @@ a:active {
   height: 1rem;
   margin-left: calc((100% - var(--section-max-width)) / 2);
   width: calc((var(--section-max-width) / 2) - 2rem);
-/*   background-color: var(--base03); */
+  background-color: var(--base02);
   opacity: 0;
   animation: 0.3s fade-in forwards;
   animation-delay: 1.2s;
