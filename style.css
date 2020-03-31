@@ -620,10 +620,6 @@ ul.graphical li img {
     height: 1.7rem;
   }
 
-  p {
-    text-align: justify;
-  }
-
   #history-section > div > .graphical {
     margin-bottom: -3.5rem;
   }
@@ -658,6 +654,12 @@ ul.graphical li img {
     height: 2.5rem;
     margin-right: 0.8rem;
     margin-top: -0.6rem;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1023px) {
+  p {
+    text-align: justify;
   }
 }
 
