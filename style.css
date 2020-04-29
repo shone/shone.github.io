@@ -162,7 +162,8 @@ h2 a:hover {
 }
 
 h2:nth-of-type(1) { animation-delay: 0.6s; }
-h2:nth-of-type(2) { animation-delay: 1.2s; }
+h2:nth-of-type(2) { animation-delay: 1.0s; }
+h2:nth-of-type(3) { animation-delay: 1.2s; }
 
 section {
   position: relative;
@@ -204,7 +205,8 @@ section::before {
 
 section:nth-of-type(1)::before { animation-delay: 0.4s; animation-duration: 0.2s; }
 section:nth-of-type(2)::before { animation-delay: 0.7s; animation-duration: 0.2s; }
-section:nth-of-type(3)::before { animation-delay: 1.2s; animation-duration: 0.7s; }
+section:nth-of-type(3)::before { animation-delay: 1.0s; animation-duration: 0.05s; }
+section:nth-of-type(4)::before { animation-delay: 1.2s; animation-duration: 0.7s; }
 
 section > div {
   display: flex;
@@ -221,13 +223,14 @@ section:nth-of-type(2) > div:nth-of-type(3) { animation-delay: 1.0s; }
 section:nth-of-type(2) > div:nth-of-type(4) { animation-delay: 1.1s; }
 section:nth-of-type(2) > div:nth-of-type(5) { animation-delay: 1.2s; }
 section:nth-of-type(3) > div:nth-of-type(1) { animation-delay: 1.3s; }
-section:nth-of-type(3) > div:nth-of-type(2) { animation-delay: 1.4s; }
-section:nth-of-type(3) > div:nth-of-type(3) { animation-delay: 1.5s; }
-section:nth-of-type(3) > div:nth-of-type(4) { animation-delay: 1.6s; }
-section:nth-of-type(3) > div:nth-of-type(5) { animation-delay: 1.7s; }
-section:nth-of-type(3) > div:nth-of-type(6) { animation-delay: 1.8s; }
-section:nth-of-type(3) > div:nth-of-type(7) { animation-delay: 1.9s; }
-section:nth-of-type(3) > div:nth-of-type(8) { animation-delay: 2.0s; }
+section:nth-of-type(4) > div:nth-of-type(1) { animation-delay: 1.4s; }
+section:nth-of-type(4) > div:nth-of-type(2) { animation-delay: 1.5s; }
+section:nth-of-type(4) > div:nth-of-type(3) { animation-delay: 1.6s; }
+section:nth-of-type(4) > div:nth-of-type(4) { animation-delay: 1.7s; }
+section:nth-of-type(4) > div:nth-of-type(5) { animation-delay: 1.8s; }
+section:nth-of-type(4) > div:nth-of-type(6) { animation-delay: 1.9s; }
+section:nth-of-type(4) > div:nth-of-type(7) { animation-delay: 2.0s; }
+section:nth-of-type(4) > div:nth-of-type(8) { animation-delay: 2.1s; }
 
 section > div > .graphical {
   flex-basis: 3rem;
@@ -649,6 +652,19 @@ ul.graphical li img {
     margin-bottom: 2rem;
   }
   #projects-section > div > .graphical {
+    display: inline-block;
+    float: left;
+    width:  2.5rem;
+    height: 2.5rem;
+    margin-right: 0.8rem;
+    margin-top: -0.6rem;
+  }
+
+  #articles-section > div {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  #articles-section > div > .graphical {
     display: inline-block;
     float: left;
     width:  2.5rem;

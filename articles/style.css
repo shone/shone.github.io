@@ -1,0 +1,369 @@
+html {
+  /* Solarized theme */
+  --base03:  #002b36;
+  --base02:  #073642;
+  --base01:  #586e75;
+  --base00:  #657b83;
+  --base0:   #839496;
+  --base1:   #93a1a1;
+  --base2:   #eee8d5;
+  --base3:   #fdf6e3;
+  --yellow:  #b58900;
+  --orange:  #cb4b16;
+  --red:     #dc322f;
+  --magenta: #d33682;
+  --violet:  #6c71c4;
+  --blue:    #268bd2;
+  --cyan:    #2aa198;
+  --green:   #859900;
+
+  background: var(--base03);
+
+  color: var(--base0);
+  font-family: monospace;
+  font-size: 16px;
+
+  padding: 16px;
+}
+body {
+  --max-body-width: 900px;
+  padding: 0 calc((100vw - var(--max-body-width)) / 2);
+  margin: 0;
+}
+
+/* Scrolling */
+html {
+  scrollbar-color: var(--base01) transparent;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 16px;
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: var(--base01);
+  border: 4px solid var(--base03);
+  border-radius: 8px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--base00);
+}
+
+::selection {
+  background: rgba(253, 246, 227, 0.996); /* Must not use opacity of 1 or Chrome adds transparency */
+  color: var(--base00);
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+a {
+  display: inline-block;
+  color: var(--blue);
+  text-decoration: underline;
+  font-weight: bold;
+  border: 1px solid transparent;
+  border-radius: 0.1rem;
+}
+a:hover {
+  outline: none;
+  background: var(--blue);
+  box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.45);
+  color: var(--base03);
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+  border: 1px dashed var(--blue);
+  text-decoration: none;
+}
+a:active {
+  transform: translate(0.1rem, 0.1rem);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
+}
+
+figure {
+  display: flex;
+  margin: 19px 0;
+/*   border-radius: 6px; */
+/*   border: 1px solid var(--base0); */
+  overflow: hidden;
+}
+figure > span > p:first-of-type {
+  margin-top: 0;
+}
+@media (min-width: 751px) {
+  figure > :nth-child(2) {
+    margin-left: 16px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 750px) {
+  figure {
+    flex-direction: column;
+  }
+  figure > :nth-child(2) {
+    margin-top: 16px;
+  }
+  figure > pre {
+    width: 100%;
+  }
+}
+
+pre {
+  font-size: 14px;
+  padding: 15px;
+  margin: 0;
+  flex-grow: 1;
+  overflow-x: auto;
+  background-color: var(--base3);
+}
+pre .selector          { color: var(--red); font-weight: bold; }
+pre .line-continuation { color: var(--red); }
+pre .string            { color: var(--cyan); }
+pre .property          { color: var(--green); font-weight: bold; }
+pre .attribute         { color: var(--green); }
+pre .tag               { color: var(--green); font-weight: bold; }
+pre .function          { color: var(--blue); }
+pre {
+  scrollbar-color: var(--base01) transparent;
+  scroll-behavior: smooth;
+}
+pre::-webkit-scrollbar {
+  width: 16px;
+  background: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+  background: var(--base01);
+  border: 4px solid var(--base3);
+  border-radius: 8px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: var(--base00);
+}
+pre::selection,
+pre *::selection {
+  background: rgba(0, 43, 54, 0.996); /* Must not use opacity of 1 or Chrome adds transparency */
+  color: var(--base0);
+}
+
+code {
+  color: var(--green);
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 28px;
+}
+
+sub {
+  vertical-align: initial;
+  font-style: italic;
+  margin-left: -4px;
+}
+
+dl > div {
+  display: flex;
+}
+
+#buttons-example {
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--base0);
+}
+#buttons-example .grid {
+  width:  180px;
+  height: 180px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items:   center;
+}
+#buttons-example button {
+  width:  60px;
+  height: 60px;
+  border-radius: 6px;
+  border: none;
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">\
+      <path\
+        fill="white"\
+        d="M16.8 6.6l-4 4 .7 5.7-5-2.4-5.1\
+           2.3.7-5.6L.3 6.5l5.5-1 2.8-5 2.6 5z"\
+      />\
+    </svg>\
+  ');
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+#buttons-example button:hover {
+  
+}
+#buttons-example button:focus {
+  outline: none;
+}
+#buttons-example button.red   { background-color: var(--red);   }
+#buttons-example button.green { background-color: var(--green); }
+#buttons-example button.blue  { background-color: var(--blue);  }
+#buttons-example button.cyan  { background-color: var(--cyan);  }
+
+#example-table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+#example-table tbody {
+  display: block;
+}
+#example-table tr {
+  display: flex;
+}
+#example-table td {
+  border: 1px solid var(--base0);
+  padding: 0;
+}
+#example-table td:first-of-type {
+  background: var(--base3);
+  vertical-align: top;
+  flex-grow: 1;
+  min-width: 100px;
+  display: flex;
+}
+#example-table td:nth-child(2) {
+  width: 150px;
+}
+#example-table svg {
+  width:  150px;
+  height: 150px;
+  transform: scale(0.7);
+}
+
+
+#inkscape-workflow figure {
+  margin: 45px 0;
+}
+
+#inkscape-workflow figure > span:first-child p {
+  padding-left: 0;
+}
+
+#inkscape-workflow figure img {
+  flex-shrink: 0;
+}
+#inkscape-workflow figure pre {
+  flex-shrink: 0;
+  white-space: pre-wrap;
+}
+#inkscape-workflow figure img {
+  width: 270px;
+}
+@media (min-width: 751px) {
+  #inkscape-workflow figure pre {
+    width: 400px;
+    max-width: 45vw;
+  }
+}
+@media (max-width: 750px) {
+  #inkscape-workflow figure img {
+    width: 100%;
+    object-fit: contain;
+    background: black;
+  }
+}
+img[src="blender_logo_in_inkscape.png"]                { height: 225px; }
+img[src="inkscape_simplify_path.png"]                  { height: 135px; }
+img[src="blender_logo_in_inkscape_simplified.png"]     { height: 223px; }
+img[src="blender_logo_in_inkscape_manual_cleanup.png"] { height: 223px; }
+img[src="inkscape_optimized_svg_dialog.png"]           { height: 306px; }
+img[src="blender_logo_in_svgomg.png"]                  { height: 179px; }
+
+
+@media (min-width: 751px) {
+  #browser-support figure pre {
+    margin-left: 0;
+  }
+}
+@media (max-width: 750px) {
+  #browser-support figure pre {
+    margin-top: 0;
+  }
+}
+
+#browser-support-table {
+  margin: 15px 0;
+}
+#browser-support-table span {
+  color: white;
+  display: inline-block;
+  border-radius: 6px;
+  padding: 3px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+#browser-support-table td {
+  padding: 5px;
+}
+#browser-support-table td:first-of-type {
+  color: white;
+  padding: 0;
+  padding-right: 15px;
+  padding-top: 9px;
+  vertical-align: top;
+}
+
+#browser-support-table th.supported  { color: var(--green);   }
+#browser-support-table th.partial    { color: var(--cyan);    }
+#browser-support-table th.no-support { color: var(--magenta); }
+
+#browser-support-table td.supported  span { background: var(--green);   }
+#browser-support-table td.partial    span { background: var(--cyan);    }
+#browser-support-table td.no-support span { background: var(--magenta); }
+
+#browser-support-footnotes dt {
+  background: var(--cyan);
+  color: white;
+  padding: 3px;
+  border-radius: 6px;
+  margin: 4px;
+  font-size: smaller;
+  font-style: italic;
+}
+#browser-support-footnotes dd {
+  padding-top: 6px;
+  margin-left: 10px;
+}
+
+#svg-stresstest-container {
+  background-image: url('checkerboard.png');
+}
+#svg-stresstest {
+  margin: 30px auto;
+  width:  280px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,\
+    <svg viewBox="-1 0 32 30"\
+      xmlns="http://www.w3.org/2000/svg">\
+      <path\
+        fill="white"\
+        d="M16.8 6.6l-4 4 .7 5.7-5-2.4-5.1\
+          2.3.7-5.6L.3 6.5l5.5-1 2.8-5 2.6 5z"\
+      />\
+      <polygon fill="rgb(0,160,0)"\
+        points="20,5 30,5 25,15"/>\
+      <circle fill="rgba(255,0,0,.5)"\
+        cx="25" cy="25" r="4"/>\
+      <rect fill="%236c71c4" rx="2"\
+        x="4" y="21" width="8" height="8" />\
+    </svg>\
+  ');
+}

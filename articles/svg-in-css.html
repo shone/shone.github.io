@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Inline SVG in CSS</title>
+
+    <meta name="description" content="Article on using inline SVG data URLs in CSS for web-app icons.">
+    <meta name="theme-color" content="#002b36">
+    <meta name='viewport'    content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+
+    <link rel="stylesheet"    href="style.css">
+    <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
+  </head>
+
+  <body>
+    <h1>Inline SVG in CSS</h1>
+
+    <section id="introduction">
+      <figure>
+        <pre>
+          button {
+            background: url('data:image/svg+xml,\
+              &lt;svg viewBox=&quot;0 0 17 17&quot;\
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;\
+                &lt;path\
+                  fill=&quot;white&quot;\
+                  d=&quot;M16.8 6.6l-4 4 .7 5.7-5-2.4-5.1\
+                    2.3.7-5.6L.3 6.5l5.5-1 2.8-5 2.6 5z&quot;\
+                /&gt;\
+              &lt;/svg&gt;\
+            ');
+          }
+        </pre>
+        <span id="buttons-example">
+          <div class="grid">
+            <button class="red"></button>
+            <button class="green"></button>
+            <button class="blue"></button>
+            <button class="cyan"></button>
+          </div>
+        </span>
+      </figure>
+
+      <p>
+        Vector icons for web-apps can be implemented using SVG inlined into CSS with data URLs. This can improve performance vs using separate .svg files by avoiding extra network requests, and can be a simple, zero-dependency alternative to font-based or template-based icon insertion.
+      </p>
+    </section>
+
+    <section id="encoding">
+      <h2>Encoding</h2>
+
+      <p>
+        As serveral articles state (Stack Overflow, CSS-Tricks), certain characters must be URL-escaped and Base64 encoding is sometimes suggested as a workaround. For the payload of a data-URL however, only a subset of the usual characters reserved for URLs must be escaped. In many cases, escaping can be avoided altogether:
+      </p>
+
+      <ul>
+        <li>Use single-quotes for the surrounding <code>url('')</code> so double-quotes can be used for SVG tag attributes.</li>
+        <li>Use <code>rgb()</code> or color names like <code>white</code> or <code>black</code> instead of hex values to avoid the <code>'#'</code> character, which would otherwise need to be <a href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">percent-encoded</a>.</li>
+      </ul>
+
+      <p>
+        CSS supports multi-line strings by appending a line continuation character (<code>'\'</code>) to each line. This can allow for nicely indented SVG snippets. With the formatting kept more readable like this, it can be practical to type out SVG syntax for simple graphics directly into the stylesheet.
+      </p>
+
+      <p>
+        If you can accept the default character encoding for data URLs (<code>US-ASCII</code>), you can omit an encoding declaration like <code>;utf8,</code> thus further reduding the boilerplate for each graphic. For the limited use-case of simple paths and lines, the default character encoding is enough.
+      </p>
+
+      <p>
+        Note that the SVG <code>xmlns</code> attribute is required, but the <code>version</code> attribute is ignored by browsers and can be omitted.
+      </p>
+
+    </section>
+
+    <section id="examples">
+      <h2>Examples</h2>
+
+      <p>
+        These data URLs can be pasted directly into your CSS as a <code>background-image</code>
+      </p>
+
+      <table id="example-table">
+
+        <tr>
+          <td>
+            <pre>
+              url('data:image/svg+xml,\
+                &lt;svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"&gt;\
+                  &lt;path stroke="white"\
+                    stroke-width="0.15" stroke-linecap="round"\
+                    d="M0.1,0.2 H0.9 M0.1,0.5 H0.9 M0.1,0.8 H0.9"\
+                  /&gt;\
+                &lt;/svg&gt;\
+              ')
+            </pre>
+          </td>
+          <td>
+            <svg viewBox="0 0 1 1">\
+              <path stroke="white"
+                stroke-width="0.15" stroke-linecap="round"
+                d="M0.1,0.2 H0.9 M0.1,0.5 H0.9 M0.1,0.8 H0.9"
+              />
+            </svg>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <pre>
+              url('data:image/svg+xml,\
+                &lt;svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"&gt;\
+                  &lt;path stroke="white" stroke-width="0.2"\
+                    stroke-linecap="round" stroke-linejoin="round"\
+                    d="M0.1,0.1 L0.9,0.9 M0.1,0.9 L0.9,0.1"\
+                  /&gt;\
+                &lt;/svg&gt;\
+              ')
+            </pre>
+          </td>
+          <td>
+            <svg viewBox="0 0 1 1">\
+              <path stroke="white" stroke-width="0.2"
+                stroke-linecap="round" stroke-linejoin="round"
+                d="M0.1,0.1 L0.9,0.9 M0.1,0.9 L0.9,0.1"
+              />
+            </svg>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <pre>
+              url('data:image/svg+xml,\
+                &lt;svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"&gt;\
+                  &lt;path stroke="white" stroke-width="0.2"\
+                    stroke-linecap="round" stroke-linejoin="round"\
+                    d="M0.1,0.5 H0.9 Z M0.5,0.1 V0.9"\
+                  /&gt;\
+                &lt;/svg&gt;\
+              ')
+            </pre>
+          </td>
+          <td>
+            <svg viewBox="0 0 1 1">
+              <path stroke="white" stroke-width="0.2"
+                stroke-linecap="round" stroke-linejoin="round"
+                d="M0.1,0.5 H0.9 Z M0.5,0.1 V0.9"/>
+            </svg>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <pre>
+              url('data:image/svg+xml,\
+                &lt;svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"&gt;\
+                  &lt;g stroke="white" stroke-width="2"&gt;\
+                    &lt;circle cx="6" cy="6" r="4.5" fill="none"/&gt;\
+                    &lt;path d="m9.4 9.4 6 6" stroke-linecap="round"/&gt;\
+                  &lt;/g&gt;\
+                &lt;/svg&gt;\
+              ')
+            </pre>
+          </td>
+          <td>
+            <svg viewBox="0 0 17 17">
+              <g stroke="white" stroke-width="2">
+                <circle cx="6" cy="6" r="4.5" fill="none"/>
+                <path d="m9.4 9.4 6 6" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <pre>
+              url('data:image/svg+xml,\
+                &lt;svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"&gt;\
+                  &lt;path fill="white" d="M0.1,0 v1 L0.9,0.5"/&gt;\
+                &lt;/svg&gt;\
+              ')
+            </pre>
+          </td>
+          <td>
+            <svg viewBox="0 0 1 1">
+              <path fill="white" d="M0.1,0 v1 L0.9,0.5"/>
+            </svg>
+          </td>
+        </tr>
+
+      </table>
+    </section>
+
+    <section id="inkscape-workflow">
+      <h2>Inkscape workflow</h2>
+
+      <p>
+        When creating more complex graphics or importing icons, I use a combination of <a href="https://inkscape.org/">Inkscape</a>, <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> and manual text editing to produce clean SVG markup suitable for inlining into CSS. Here's an example workflow using the <a href="https://www.blender.org/">Blender</a> logo from Wikipedia:
+      </p>
+
+      <figure>
+        <img src="blender_logo_in_inkscape.png" alt="Blender logo opened in Inkscape">
+        <span>
+          <p>
+            This path has redundant vertices. The slightly smaller diamond-shaped handles indicate multiple verticies stacked onto the same position. If you click and drag you can pull out each one, revealing the duplication. It's a surprisingly common problem; possibly caused by conversion from one vector format to another.
+          </p>
+          <p>
+            There's also more verticies than necessary for the circular shapes; only four are needed per circle.
+          </p>
+        </span>
+      </figure>
+
+      <figure>
+        <img src="inkscape_simplify_path.png" alt="Inkscape Simplify path menu item">
+        <p>
+          Inkscape's 'Simplify' path command can automatically clean up redundant verticies.
+        </p>
+      </figure>
+
+      <figure>
+        <img src="blender_logo_in_inkscape_simplified.png" alt="Simplified Blender logo in Inkscape">
+        <p>
+          There's still a few redundant verticies that can be manually removed, after which the Bézier handles will need to be tweaked to ensure the overall shape is preserved.
+        </p>
+      </figure>
+
+      <figure>
+        <img src="blender_logo_in_inkscape_manual_cleanup.png" alt="Blender logo path manually cleaned up in Inkscape">
+        <p>
+          Now it's quite tidy. If the logo were to be displayed at a very small scale, it could be simplified even further. In any case, the filesize will be small and it'll be as efficient as possible for the browser to render.
+        </p>
+      </figure>
+
+      <figure>
+        <img src="inkscape_optimized_svg_dialog.png" alt="Inkscape save as Optimized SVG dialog">
+        <span>
+          <p>
+            Save it as an "Optimized SVG" so it doesn't include any Inkscape-specific metadata which can be quite verbose. Several useful optimizations to reduce filesize further are enabled by default.
+          </p>
+          <p>
+            There's an option to limit the number of significant digits for coordinates, but I suggest leaving this at the default value and doing precision reduction in a separate step where you can visualize the result.
+          </p>
+        </span>
+      </figure>
+
+      <figure>
+        <img src="blender_logo_in_svgomg.png" alt="Blender logo opened in SVGOMG">
+        <span>
+          <p>
+            I use Jake Archibald's <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> to visualize the result of applying precision reduction. You can find the optimum point before your paths become potato.
+          </p>
+          <p>
+            The additional optimization passes performed by SVGO may further simplify the SVG markup.
+          </p>
+        </span>
+      </figure>
+
+      <figure>
+        <span>
+          <p>
+            Here's the output from SVGOMG. It's pretty concise, but it needs a bit more cleaning before it can be inlined into a data URL.
+          </p>
+        </span>
+        <pre>
+          &lt;svg width=&quot;180.9&quot; height=&quot;147.7&quot; viewBox=&quot;18 268 180.9 147.7&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M112.3 350.9c.3-6 3.2-11.1 7.5-14.8 4.3-3.7 10-5.9 16.3-5.9 6.3 0 12 2.2 16.4 5.9a21 21 0 017.5 14.8c.4 6-2 11.7-6.3 15.8a25 25 0 01-17.5 7 25 25 0 01-17.6-7 20.5 20.5 0 01-6.3-15.8z&quot; fill=&quot;#005385&quot; stroke-width=&quot;0&quot;/&gt;&lt;path d=&quot;M124.9 413c27.2 4.6 57.7-9.8 68.2-36a53.2 53.2 0 00-16.8-61.5L119.9 272c-5.8-5-19.2-.9-16.6 8 8 8 16.8 14.5 25 21.2l-71.5.1c-16.6 0-15.3 17.7.6 17.6H90c-21.6 16.6-43 33.5-64.9 49.8-12.7 9.6 2.4 26 14.2 16.1 9.6-8 25.8-20.4 35.5-28.3-4 31.4 30.2 53.1 50.2 56.3zm38.4-37.4c-15.8 16.6-46.3 14.8-59.5-4.1-10.6-13.8-6.4-35.2 7.8-44.9 18-13.9 48-8.4 58 12.5 6 12 3.2 27.2-6.3 36.5z&quot; fill=&quot;#ff7021&quot; stroke-width=&quot;0&quot;/&gt;&lt;/svg&gt;
+        </pre>
+      </figure>
+
+      <figure>
+        <span>
+          <p>
+            The following manual edits were made to produce this final data URL:
+          </p>
+          <ul>
+            <li>Add line breaks with line continuations (<code>'\'</code>).</li>
+            <li>Remove <code>width</code>/<code>height</code> attributes, as an <a href="https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size">intrinsic size</a> isn't needed when the <code>background-image</code> is sized relative to the parent element. The <code>viewBox</code> determines the bounds of the svg.</li>
+            <li>Convert hex colors to <code>rgb()</code> to avoid the <code>'#'</code> character, which would otherwise need to be <a href="https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters">percent-encoded</a>.</li>
+            <li>Remove the <code>stroke-width</code> attribute, as <code>stroke</code> already defaults to "none".</li>
+          </ul>
+        </span>
+        <pre>
+          url('data:image/svg+xml,\
+            &lt;svg\
+              viewBox=&quot;18 268 180.9 147.7&quot;\
+              xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;\
+              &lt;path fill=&quot;rgb(0,83,133)&quot;\
+                d=&quot;M112.3 350.9c.3-6 3.2-11.1\
+                7.5-14.8 4.3-3.7 10-5.9 16.3-5.9\
+                6.3 0 12 2.2 16.4 5.9a21 21 0\
+                017.5 14.8c.4 6-2 11.7-6.3\
+                15.8a25 25 0 01-17.5 7 25 25 0\
+                01-17.6-7 20.5 20.5 0\
+                01-6.3-15.8z&quot;/&gt;\
+              &lt;path fill=&quot;rgb(255,112,33)&quot;\
+                d=&quot;M124.9 413c27.2 4.6 57.7-9.8\
+                68.2-36a53.2 53.2 0\
+                00-16.8-61.5L119.9\
+                272c-5.8-5-19.2-.9-16.6 8 8 8\
+                16.8 14.5 25 21.2l-71.5.1c-16.6\
+                0-15.3 17.7.6 17.6H90c-21.6\
+                16.6-43 33.5-64.9 49.8-12.7 9.6\
+                2.4 26 14.2 16.1 9.6-8 25.8-20.4\
+                35.5-28.3-4 31.4 30.2 53.1 50.2\
+                56.3zm38.4-37.4c-15.8 16.6-46.3\
+                14.8-59.5-4.1-10.6-13.8-6.4-35.2\
+                7.8-44.9 18-13.9 48-8.4 58 12.5\
+                6 12 3.2 27.2-6.3 36.5z&quot;/&gt;\
+            &lt;/svg&gt;\
+          ')
+        </pre>
+      </figure>
+    </section>
+
+    <section id="browser-support">
+      <h2>Browser support</h2>
+
+      The following stress-test uses various SVG elements and color encodings, and was applied to a range of browser versions using <a href="https://www.browserstack.com/">BrowserStack</a>:
+
+      <figure>
+<!--         <iframe src="svg-stresstest.html"></iframe> -->
+        <span id="svg-stresstest-container">
+          <div id="svg-stresstest"></div>
+        </span>
+
+        <pre>
+          background-image: url('data:image/svg+xml,\
+            &lt;svg viewBox="0 0 35 35"\
+              xmlns="http://www.w3.org/2000/svg"&gt;\
+              &lt;path\
+                fill="white"\
+                d="M16.8 6.6l-4 4 .7 5.7-5-2.4-5.1\
+                  2.3.7-5.6L.3 6.5l5.5-1 2.8-5 2.6 5z"\
+              /&gt;\
+              &lt;polygon fill="rgb(0,160,0)"\
+                points="25,5 35,5 30,15"/&gt;\
+              &lt;circle fill="rgba(255,0,0,.5)"\
+                cx="25" cy="25" r="4"/&gt;\
+              &lt;rect fill="%236c71c4" rx="2"\
+                x="4" y="21" width="8" height="8" /&gt;\
+            &lt;/svg>\
+          ');
+        </pre>
+      </figure>
+
+      <table id="browser-support-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="supported">Full support</th>
+            <th class="partial">Partial support</th>
+            <th class="no-support">No support</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chrome</td> <td class="supported">
+                              <span>80</span>
+                              <span>70</span>
+                              <span>65</span>
+                              <span>64</span>
+                              <span>60</span>
+                              <span>50</span>
+                              <span>40</span>
+                              <span>37</span>
+                            </td>
+          </tr>
+          <tr>
+            <td>Safari</td> <td class="supported">
+                              <span>13</span>
+                              <span>12.1</span>
+                              <span>11.1</span>
+                              <span>10.1</span>
+                              <span>9.1</span>
+                              <span>8</span>
+                              <span>7.1</span>
+                              <span>6.2</span>
+                              <span>6</span>
+                              <span>5.1</span>
+                            <td class="partial">
+                              <span>5 <sub>(1)</sub></span>
+                            </td>
+                            <td class="no-support">
+                              <span>4</span>
+                            </td>
+          </tr>
+          <tr>
+            <td>Firefox</td>  <td class="supported">
+                                <span>75</span>
+                                <span>74</span>
+                                <span>70</span>
+                                <span>66</span>
+                                <span>52</span>
+                                <span>51</span>
+                                <span>45</span>
+                                <span>32</span>
+                              </td>
+          </tr>
+          <tr>
+            <td>Edge</td> <td class="supported">
+                            <span>81</span>
+                            <span>80</span>
+                            <span>18</span>
+                            <span>17</span>
+                            <span>16</span>
+                          </td>
+                          <td class="partial">
+                            <span> 15 <sub>(2)</sub> </span>
+                          </td>
+          </tr>
+          <tr>
+            <td>IE</td> <td class="supported">
+                          (none)
+                        </td>
+                        <td class="partial">
+                          <span> 11 <sub>(2)</sub> </span>
+                          <span> 10 <sub>(2)</sub> </span>
+                          <span>  9 <sub>(2)</sub> </span>
+                        </td>
+                        <td class="no-support">
+                          <span>8</span>
+                          <span>7</span>
+                          <span>6</span>
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <dl id="browser-support-footnotes">
+        <div>
+          <dt>(1)</dt>
+          <dd>Translucently isn't handled correctly</dd>
+        </div>
+        <div>
+          <dt>(2)</dt>
+          <dd>Must be fully URL-encoded</dd>
+        </div>
+      </dl>
+
+      <p>
+        Every major browser rendered the stress-test correctly, except IE: it requires full URL-encoding in the data URL. Given this, I'd say unencoded inline SVG is suitable for web apps that already require a modern browser, but not suitable where maximum compatiblity is a requirement, like a government website.
+      </p>
+    </section>
+
+    <section id="js-comparison">
+      <h2>Compared to JS-based SVG insertion</h2>
+
+      <p>
+        I've seen several Javascript-based methods of inlining vector icons into web apps, such as defining custom helpers for JS templating systems or using a React component to re-use SVG <code>&lt;symbol&gt;</code> elements. Icon insertion methods that use Javascript to create 'real' SVG DOM elements can have disadvantages though:
+      </p>
+
+      <ul>
+        <li>Reduced accesibility and SEO performance due to non-semantic SVG elements in DOM.</li>
+        <li>Obscures more important elements when inspecting/debugging live DOM.</li>
+        <li>The same SVGs can end up being parsed multiple times by the browser if the icon is reused on multiple elements.</li>
+        <li>Reduces HTML renderer performance by increasing the number of elements considered for CSS selection, hit-testing etc.</li>
+        <li>Reduces javascript performance with extra interaction with the DOM API.</li>
+      </ul>
+
+      <p>
+        Defining icons in pure CSS can allow for clean, semantically-correct HTML that's pleasant to inspect/debug, and minimizes performance bottlenecks.
+      </p>
+    </section>
+
+    <section id="font-comparison">
+      <h2>Compared to font-based icons</h2>
+      <p>
+        <a href="https://fontawesome.com/">Font Awesome</a>, for example, provides a multitude of icons packaged as web fonts. It's easy to integrate and there's a wealth of customizations, but there's still a few disadvantages vs this pure-CSS solution:
+      </p>
+      <ul>
+        <li>Separate network request for font</li>
+        <li>Not easily edited</li>
+        <li>Requires pseudo-elements to contain the special characters</li>
+      </ul>
+    </section>
+
+    <section id="limitations">
+      <h2>Gotchas and limitations</h2>
+
+      <ul>
+        <li>Color themes can't be applied.</li>
+        <li>No error feedback for incorrect SVG syntax or improperly escaped data URLs</li>
+        <li>No syntax highlighting?</li>
+      </ul>
+    </section>
+
+    <script src="syntax_highlighting.js"></script>
+  </body>
+</html>
