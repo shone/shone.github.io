@@ -30,6 +30,13 @@ for (let year = 1989; year < now.getFullYear()+1; year++) {
     <span class="timeline-block" data-start="01.01.${year}" data-end="01.01.${year+1}"></span>
   `);
 }
+const historySectionObserver = new IntersectionObserver(
+  entries => {
+    timelineHeader.classList.toggle('hidden', entries[0].intersectionRatio < 0.1);
+  },
+  { threshold: 0.1 }
+);
+historySectionObserver.observe(document.getElementById('history-section'));
 
 // Setup timeline blocks
 for (const block of document.getElementsByClassName('timeline-block')) {

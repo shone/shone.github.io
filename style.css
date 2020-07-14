@@ -29,7 +29,6 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-color: var(--base01) transparent;
-  scroll-behavior: smooth;
 }
 html::-webkit-scrollbar {
   width: 16px;
@@ -86,7 +85,6 @@ h1 {
   font-size: 0; /* The h1 element has text for SEO but the profile pic is shown instead */
   z-index: 3;
   pointer-events: none;
-  animation: 1.6s fade-in;
 }
 h1 a {
   width:  8rem;
@@ -115,13 +113,8 @@ h1 img {
   border-radius: 100%;
   margin-top: 1rem;
   transition: width 0.2s, height 0.2s, margin-top 0.2s;
-  animation: 0.7s reveal-profile-pic forwards;
   cursor: pointer;
   pointer-events: none;
-}
-@keyframes reveal-profile-pic {
-  from {transform: scale(0.7);}
-  to   {transform: scale(1);}
 }
 h1 a::after {
   pointer-events: none;
@@ -144,8 +137,6 @@ h2 {
   font-weight: bold;
   text-align: center;
   pointer-events: none;
-  opacity: 0;
-  animation: 0.5s fade-in forwards;
 }
 h2 a {
   text-decoration: none;
@@ -161,10 +152,6 @@ h2 a:hover {
   color: var(--base03);
 }
 
-h2:nth-of-type(1) { animation-delay: 0.6s; }
-h2:nth-of-type(2) { animation-delay: 1.0s; }
-h2:nth-of-type(3) { animation-delay: 1.2s; }
-
 section {
   position: relative;
   max-width: var(--section-max-width);
@@ -179,10 +166,6 @@ section > .scroll-handle {
 #about.scroll-handle {
   top: calc(var(--h1-height) * -1);
 }
-@keyframes fade-in {
-  from {opacity: 0;}
-  to   {opacity: 1;}
-}
 section:nth-of-type(1)::before {
   top: 1rem;
 }
@@ -195,42 +178,12 @@ section::before {
   border-radius: 2px;
   top: 0;
   bottom: 100%;
-  animation: 0.3s linear reveal-centerline forwards;
 }
-@keyframes reveal-centerline {
-  from {bottom: 100%; background: linear-gradient(var(--yellow), var(--yellow) 85%, white); border-bottom: 1.5rem solid white; }
-  95%  {              background: linear-gradient(var(--yellow), var(--yellow) 90%, white); border-bottom: 1.5rem solid white; }
-  to   {bottom: 0;    background: var(--yellow);                                            border-bottom: none}
-}
-
-section:nth-of-type(1)::before { animation-delay: 0.4s; animation-duration: 0.2s; }
-section:nth-of-type(2)::before { animation-delay: 0.7s; animation-duration: 0.2s; }
-section:nth-of-type(3)::before { animation-delay: 1.0s; animation-duration: 0.05s; }
-section:nth-of-type(4)::before { animation-delay: 1.2s; animation-duration: 0.7s; }
 
 section > div {
   display: flex;
   margin-bottom: 1rem;
-  opacity: 0;
-  animation: 0.5s fade-in forwards;
 }
-section:nth-of-type(1) > div:nth-of-type(1) { animation-delay: 0.5s; }
-section:nth-of-type(1) > div:nth-of-type(2) { animation-delay: 0.6s; }
-section:nth-of-type(1) > div:nth-of-type(3) { animation-delay: 0.7s; }
-section:nth-of-type(2) > div:nth-of-type(1) { animation-delay: 0.8s; }
-section:nth-of-type(2) > div:nth-of-type(2) { animation-delay: 0.9s; }
-section:nth-of-type(2) > div:nth-of-type(3) { animation-delay: 1.0s; }
-section:nth-of-type(2) > div:nth-of-type(4) { animation-delay: 1.1s; }
-section:nth-of-type(2) > div:nth-of-type(5) { animation-delay: 1.2s; }
-section:nth-of-type(3) > div:nth-of-type(1) { animation-delay: 1.3s; }
-section:nth-of-type(4) > div:nth-of-type(1) { animation-delay: 1.4s; }
-section:nth-of-type(4) > div:nth-of-type(2) { animation-delay: 1.5s; }
-section:nth-of-type(4) > div:nth-of-type(3) { animation-delay: 1.6s; }
-section:nth-of-type(4) > div:nth-of-type(4) { animation-delay: 1.7s; }
-section:nth-of-type(4) > div:nth-of-type(5) { animation-delay: 1.8s; }
-section:nth-of-type(4) > div:nth-of-type(6) { animation-delay: 1.9s; }
-section:nth-of-type(4) > div:nth-of-type(7) { animation-delay: 2.0s; }
-section:nth-of-type(4) > div:nth-of-type(8) { animation-delay: 2.1s; }
 
 section > div > .graphical {
   flex-basis: 3rem;
@@ -283,9 +236,9 @@ a:active {
   margin-left: calc((100% - var(--section-max-width)) / 2);
   width: calc((var(--section-max-width) / 2) - 2rem);
   background-color: var(--base02);
-  opacity: 0;
-  animation: 0.3s fade-in forwards;
-  animation-delay: 1.2s;
+}
+#timeline-header.hidden {
+  visibility: hidden;
 }
 #timeline-background {
   position: absolute;
@@ -430,9 +383,23 @@ ul.graphical li img {
   height: 2.2rem;
 }
 
-.textual ul {
-  padding-left: 1.2rem;
+.textual ul.tags {
+  padding: 0;
 }
+.textual ul.tags li {
+  display: inline-flex;
+  background: var(--base0);
+  color: var(--base03);
+  font-weight: bold;
+  height: 1.4rem;
+  border-radius: .7rem;
+  padding-left:  .5rem;
+  padding-right: .5rem;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+
 .textual ul li {
   margin-bottom: 0.5rem;
 }
@@ -519,13 +486,11 @@ ul.graphical li img {
     left: calc(50% - 2px);
     border-radius: 2px;
     background-color: var(--yellow);
-    opacity: 0;
-    animation: 0.3s fade-in forwards;
-    animation-delay: 0.6s;
   }
 
   #history-section {
     margin-top: -1rem;
+    padding-top: 3rem;
   }
   #timeline-header {
     margin-left: 0;
@@ -575,6 +540,7 @@ ul.graphical li img {
 
   #history-section {
     margin-top: -1rem;
+    padding-top: 3rem;
   }
 }
 
