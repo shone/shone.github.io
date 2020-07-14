@@ -45,9 +45,10 @@ header h1 span {
 }
 
 header dl {
-  columns: 2;
   margin: 0;
   margin-left: auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 header dl > div {
   line-height: 2rem;
