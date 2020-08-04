@@ -166,19 +166,6 @@ section > .scroll-handle {
 #about.scroll-handle {
   top: calc(var(--h1-height) * -1);
 }
-section:nth-of-type(1)::before {
-  top: 1rem;
-}
-section::before {
-  display: block;
-  content: '';
-  position: absolute;
-  left: calc(50% - 2px);
-  width: 4px;
-  border-radius: 2px;
-  top: 0;
-  bottom: 100%;
-}
 
 section > div {
   display: flex;
@@ -188,13 +175,13 @@ section > div {
 section > div > .graphical {
   flex-basis: 3rem;
   flex-grow: 1;
-  margin-right: 2rem;
+  margin-right: 1rem;
   text-align: right;
 }
 section > div .textual {
   flex-basis: 3rem;
   flex-grow: 1;
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .opening-paragraph {
@@ -274,12 +261,13 @@ a:active {
   top: 0;
   bottom: 0;
   text-align: left;
-  font-size: 0.75em;
+  font-size: 0.7em;
 }
 #timeline-header .timeline-block {
   margin-top: 5px;
-  padding-left:  6px;
-  padding-right: 6px;
+  padding-left:  3px;
+  box-sizing: border-box;
+  text-align: center;
 }
 #timeline-header .timeline-block::before {
   display: block;
@@ -444,9 +432,6 @@ ul.graphical li img {
     top: 0.5rem;
     max-width: var(--section-max-width);
   }
-  h2:nth-of-type(1) {
-    margin-top: 3rem;
-  }
 
   section {
     margin-left: 0;
@@ -475,17 +460,6 @@ ul.graphical li img {
   }
   section:nth-of-type(1)::-webkit-scrollbar-thumb:hover {
     background: var(--base00);
-  }
-
-  section:nth-of-type(2)::after {
-    content: '';
-    position: absolute;
-    bottom: calc(100% + var(--h2-height) + 2rem);
-    height: 3rem;
-    width: 4px;
-    left: calc(50% - 2px);
-    border-radius: 2px;
-    background-color: var(--yellow);
   }
 
   #history-section {

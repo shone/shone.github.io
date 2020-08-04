@@ -94,7 +94,7 @@ function yearToTimelinePercentage(year) {
 
 function adjustTimelineForWindowSize() {
   // Hide/show each timeline header label depending if there's enough space
-  const yearLabelWidthPx = 50;
+  const yearLabelWidthPx = 35;
   for (const block of timelineHeader.getElementsByClassName('timeline-block')) {
     block.classList.toggle('hide-text', (block.textContent.trim() !== '1989') && (block.getBoundingClientRect().width < yearLabelWidthPx));
   }
