@@ -221,7 +221,7 @@ a:active {
   z-index: 3;
   height: 1rem;
   margin-left: calc((100% - var(--section-max-width)) / 2);
-  width: calc((var(--section-max-width) / 2) - 2rem);
+  width: calc((var(--section-max-width) / 2) - 1rem);
   background-color: var(--base02);
 }
 #timeline-header.hidden {
@@ -232,7 +232,7 @@ a:active {
   left:   0;
   top:    0;
   bottom: 0;
-  right: calc(50% + 2rem);
+  right: calc(50% + 1rem);
   overflow: hidden;
 }
 #timeline-background > .timeline-block {
