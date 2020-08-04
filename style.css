@@ -223,9 +223,11 @@ a:active {
   margin-left: calc((100% - var(--section-max-width)) / 2);
   width: calc((var(--section-max-width) / 2) - 1rem);
   background-color: var(--base02);
+  opacity: 1;
+  transition: .5s opacity;
 }
 #timeline-header.hidden {
-  visibility: hidden;
+  opacity: 0;
 }
 #timeline-background {
   position: absolute;
