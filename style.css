@@ -29,15 +29,16 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-color: var(--base01) transparent;
+  --scrollbar-width: 16px;
 }
 html::-webkit-scrollbar {
-  width: 16px;
+  width: var(--scrollbar-width);
   background: transparent;
 }
 html::-webkit-scrollbar-thumb {
   background: var(--base01);
-  border: 4px solid var(--base03);
-  border-radius: 8px;
+  border: calc(var(--scrollbar-width) / 8) solid var(--base03);
+  border-radius: calc(var(--scrollbar-width) / 2);
 }
 html::-webkit-scrollbar-thumb:hover {
   background: var(--base00);
@@ -51,7 +52,6 @@ body {
   padding-top: var(--h1-height);
 
   --h2-height: 1.8rem;
-  --h2-min-spacing: 1rem;
 
   --section-max-width: 45rem;
 }
@@ -110,7 +110,7 @@ h1 img {
   display: inline-block;
   width:  6rem;
   height: 6rem;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-top: 1rem;
   transition: width 0.2s, height 0.2s, margin-top 0.2s;
   cursor: pointer;
@@ -242,12 +242,6 @@ a:active {
   border-left: 3px solid var(--base03);
 }
 
-#history-section > div:first-of-type > .textual {
-  margin-top: 0;
-}
-#history-section > div:first-of-type > .graphical {
-  margin-top: 1.6rem;
-}
 #history-section h3 {
   margin: 0;
 }
@@ -286,12 +280,6 @@ a:active {
   z-index: 1;
 }
 
-.timeline-block .label {
-  position: absolute;
-  top: 100%;
-  margin-top: 5px;
-}
-
 .timeline-block .duration {
   position: absolute;
   bottom: 100%;
@@ -311,10 +299,9 @@ a:active {
   width: 300px;
   padding-top: 25px;
   text-align: center;
-  display: flex;
-  justify-content: center;
 }
 .timeline-block .date-label::after {
+  /* Connecting line between label and block */
   content: '';
   display: block;
   width: 1px;
@@ -327,23 +314,12 @@ a:active {
 .timeline-block .date-label.start { left:  -150px; }
 .timeline-block .date-label.end   { right: -150px; }
 
-.timeline-block.australia {
-  background: linear-gradient(135deg, #262665, #262665 10px, #fff 10px, #fff 15px, #cf3030 15px, #cf3030 20px, #fff 20px, #fff 23px, #262665 23px, #262665);
-}
-.timeline-block.germany   {
-  background: linear-gradient(135deg, #000, #000 33%, #c83737 33%, #c83737 66%, #cfaf30 66%, #cfaf30);
-}
-
 .timeline-block.aie       { background-color: var(--cyan);   }
 .timeline-block.nch       { background-color: var(--red);    }
 .timeline-block.mediaware { background-color: var(--blue);   }
 .timeline-block.kiwi      { background-color: var(--green);  }
 .timeline-block.das       { background-color: var(--yellow); }
 .timeline-block.flowkey   { background-color: var(--orange); }
-
-.timeline-paragraph-header {
-  height: 2em;
-}
 
 .hide-text {
   font-size: 0 !important;
@@ -368,9 +344,6 @@ ul.graphical li {
   margin-bottom: 1rem;
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
-}
-ul.graphical li img {
-  height: 2.2rem;
 }
 
 .textual ul.tags {
@@ -548,9 +521,6 @@ ul.graphical li img {
   section > div .textual {
     margin-left: 0;
   }
-  section::before {
-    display: none;
-  }
 
   section > .scroll-handle {
     top: calc((var(--h2-height) + 1.5rem) * -1);
@@ -561,9 +531,6 @@ ul.graphical li img {
   }
   ul.graphical li {
     margin-left: 0;
-  }
-  ul.graphical li img {
-    height: 1.7rem;
   }
 
   #history-section > div > .graphical {
