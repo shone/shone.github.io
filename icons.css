@@ -209,10 +209,10 @@
 }
 
 .bicycle-icon {
-  width:  2rem;
+  width: 2.4rem;
   height: 2rem;
   background: center / contain no-repeat url('data:image/svg+xml,\
-    <svg viewBox="0 0 575 575" xmlns="http://www.w3.org/2000/svg">\
+    <svg viewBox="0 50 575 430" xmlns="http://www.w3.org/2000/svg">\
       <g transform="matrix(.9689 0 0 .9811 -163 -66)" stroke="%23839496">\
         <circle transform="translate(156 178) scale(.6122)" cx="215" cy="409" r="161" fill="none" stroke-width="40"/>\
         <circle transform="translate(156 178) scale(.6122)" cx="790" cy="406" r="161" fill="none" stroke-width="40"/>\
