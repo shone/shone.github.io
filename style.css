@@ -320,6 +320,7 @@ a:active {
 .timeline-block.kiwi      { background-color: var(--green);  }
 .timeline-block.das       { background-color: var(--yellow); }
 .timeline-block.flowkey   { background-color: var(--orange); }
+.timeline-block.colorfy   { background-color: white;         }
 
 .hide-text {
   font-size: 0 !important;
