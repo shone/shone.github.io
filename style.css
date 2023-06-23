@@ -241,6 +241,9 @@ a:active {
   background: var(--base02);
   border-left: 3px solid var(--base03);
 }
+#timeline-background > .timeline-block:hover {
+  background: var(--base01);
+}
 
 #history-section h3 {
   margin: 0;
