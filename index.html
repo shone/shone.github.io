@@ -120,7 +120,8 @@
 					links[links.length-1].focus();
 				}
 			}
-			window.onmouseover = ({target}) => target.tagName === 'A' && target.focus();
+			window.onmouseover   = ({target}) => target.tagName === 'A' && target.focus();
+			window.onpointerdown = ({target}) => target.tagName === 'A' && target.focus();
 			window.addEventListener('focusin', ({target}) => {
 				if (links.includes(target)) {
 					localStorage.setItem('focusedLink', target.textContent);
