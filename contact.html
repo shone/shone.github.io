@@ -2,12 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>shone.dev</title>
-		<meta name="description" content="Software engineer profile for Josh Shone with CV, contact information and project links.">
-		<meta name="author"      content="Josh Shone">
-		<meta name="theme-color" content="#002b36">
-		<meta name="viewport"    content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-
+		<title>shone.dev - contact</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 		<style>
 			html {
 				/* Solarized theme */
@@ -53,10 +49,12 @@
 			ul > li {
 				list-style-type: none;
 			}
+			ul a {
+				width: 100%;
+			}
 			a {
 				color: unset;
 				text-decoration: unset;
-				width: 100%;
 				display: inline-block;
 			}
 			a:focus {
@@ -66,29 +64,17 @@
 			}
 		</style>
 	</head>
-
 	<body>
-		<h1>&gt; shone.dev | josh shone, software engineer</h1>
+		<h1>&gt; <a href="/">shone.dev</a> | josh shone, software engineer</h1>
 		<ul>
-			<li><a href="cv/index.html">cv</a></li>
-			<li><a href="contact.html">contact</a></li>
-			<li><a href="https://github.com/shone/">github</a></li>
-			<li><a href="https://github.com/shone/config">config</a></li>
-			<li><a href="https://shone.dev/eyes">eyes</a></li>
-			<li><a href="https://shone.dev/cashtable">cashtable</a></li>
-			<li><a href="https://github.com/shone/freeskate">freeskate</a></li>
-			<li><a href="https://shone.dev/piano">piano</a></li>
-			<li><a href="https://github.com/shone/schedule">golang-schedule</a></li>
-			<li><a href="https://github.com/shone/ble">ble-example</a></li>
-			<li><a href="https://shone.dev/trees">trees</a></li>
-			<li><a href="https://shone.dev/yarnball">yarnball</a></li>
-			<li><a href="svg-in-css/">svg-in-css</a></li>
+			<li><a href="mailto:josh.shone@gmail.com">josh.shone@gmail.com</a></li>
+			<li><a href="tel:+4917657937870">+4917657937870</a></li>
+			<li><a href="/">..</a></li>
 		</ul>
-
 		<script>
 			'use strict';
-			const links = [...document.querySelectorAll('a')];
-			const savedLink = localStorage.getItem('focusedLink');
+			const links = [...document.querySelector('ul').querySelectorAll('a')];
+			const savedLink = localStorage.getItem('focusedLinkContact');
 			if (savedLink) {
 				const linkIndex = links.findIndex(link => link.textContent === savedLink);
 				if (linkIndex !== -1) {
@@ -123,7 +109,7 @@
 			window.onmouseover = ({target}) => target.tagName === 'A' && target.focus();
 			window.addEventListener('focusin', ({target}) => {
 				if (links.includes(target)) {
-					localStorage.setItem('focusedLink', target.textContent);
+					localStorage.setItem('focusedLinkContact', target.textContent);
 				}
 			});
 		</script>
